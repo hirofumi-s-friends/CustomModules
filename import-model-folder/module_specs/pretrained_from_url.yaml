@@ -1,0 +1,43 @@
+name: Import Pretrained Model
+id: a0393344-7e12-4179-927e-2d318cf40001
+category: Import Data\Import Model
+description: Import pretrained model from URL
+inputs:
+- name: URL
+  type: String
+  description: Specify the url of the pretrained model.
+- name: File Name
+  type: String
+  default: ""
+  description: Specify the file name in output folder.
+outputs:
+- name: Output Folder
+  type: ModelFolder
+  description: The output folder to store the dataset.
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda10.0-cudnn7-ubuntu16.04
+      gpuSupport: True
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.2
+      - pip:
+        - --extra-index-url=https://test.pypi.org/simple
+        - ruamel.yaml==0.15.97
+        - fire==0.1.3
+        - git+$(git-url)@$(git-branch)#subdirectory=import-model-folder
+    command:
+    - python
+    - -m
+    - import_model_folder.pretrained_from_url
+    args:
+    - --url
+    - inputValue: URL
+    - --file-name
+    - inputValue: File Name
+    - --output-folder
+    - outputPath: Output Folder
