@@ -1,0 +1,35 @@
+name: Convert IMG to DataFrame
+id: 87393344-7e12-4179-927e-2d318cf40928
+category: Convert Data
+description: Convert an image directory to dataframe directory.
+inputs:
+- name: Image Path
+  type: AnyDirectory
+  description: The directory contains images.
+outputs:
+- name: Output Path
+  type: DataFrameDirectory
+  description: The directory contains a dataframe which stores the images.
+implementation:
+  container:
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.2
+      - pip:
+        - --extra-index-url=https://test.pypi.org/simple
+        - ruamel.yaml==0.15.89
+        - fire==0.1.3
+        - git+$(git-url)@$(git-branch)#subdirectory=convert-image-to-dataframe
+        - alghost-core==0.0.5
+    command:
+    - python
+    - -m
+    - convert_image_to_dataframe.main
+    args:
+    - --image-path
+    - inputValue: Image Path
+    - --output-path
+    - outputPath: Output Path
