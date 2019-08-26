@@ -28,7 +28,20 @@ def image_to_df(image_path, output_path):
         raise FileNotFoundError(f"No valid image file in path: {image_path}")
 
     df = pd.DataFrame({'image_string': imgs})
-    save_data_frame_to_directory(output_path, data=df)
+    schema = {
+        'columnAttributes': [
+            {
+                "name": "image_string",
+                "type": "String",
+                "isFeature": True,
+                "elementType": {
+                    "typeName": "str",
+                    "isNullable": False
+                },
+            },
+        ]
+    }
+    save_data_frame_to_directory(output_path, data=df, schema=schema)
     print(f"DataFrame dumped: {df}")
 
 
