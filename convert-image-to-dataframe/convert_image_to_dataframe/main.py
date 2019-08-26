@@ -39,7 +39,10 @@ def image_to_df(image_path, output_path):
                     "isNullable": False
                 },
             },
-        ]
+        ],
+        "featureChannels": [],
+        "labelColumns": {},
+        "scoreColumns": {},
     }
     save_data_frame_to_directory(output_path, data=df, schema=schema)
     print(f"DataFrame dumped: {df}")
