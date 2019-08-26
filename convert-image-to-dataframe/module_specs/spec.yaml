@@ -6,10 +6,12 @@ inputs:
 - name: Image Path
   type: AnyDirectory
   description: The directory contains images.
+  port: true
 outputs:
 - name: Output Path
   type: DataFrameDirectory
   description: The directory contains a dataframe which stores the images.
+  port: true
 implementation:
   container:
     conda:
