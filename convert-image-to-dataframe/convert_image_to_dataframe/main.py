@@ -5,6 +5,7 @@ import pandas as pd
 
 from azureml.studio.common.io.data_frame_directory import save_data_frame_to_directory
 
+VERSION = '0.0.6'
 IMG_EXTS = {'.jfif', '.png', '.jpg', '.jpeg'}
 
 
@@ -49,4 +50,5 @@ def image_to_df(image_path, output_path):
 
 
 if __name__ == '__main__':
+    print(f"Image to DataFrame version: {VERSION}")
     fire.Fire(image_to_df)
