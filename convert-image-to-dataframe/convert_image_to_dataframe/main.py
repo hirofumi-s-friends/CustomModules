@@ -3,9 +3,11 @@ import fire
 import base64
 import pandas as pd
 
-from azureml.studio.common.io.data_frame_directory import save_data_frame_to_directory
+from azureml.studio.common.datatypes import DataTypes
+from azureml.studio.common.datatable.data_table import DataTable
+from azureml.studio.modulehost.handler.port_io_handler import OutputHandler
 
-VERSION = '0.0.6'
+VERSION = '0.0.7'
 IMG_EXTS = {'.jfif', '.png', '.jpg', '.jpeg'}
 
 
@@ -29,23 +31,12 @@ def image_to_df(image_path, output_path):
         raise FileNotFoundError(f"No valid image file in path: {image_path}")
 
     df = pd.DataFrame({'image_string': imgs})
-    schema = {
-        'columnAttributes': [
-            {
-                "name": "image_string",
-                "type": "String",
-                "isFeature": True,
-                "elementType": {
-                    "typeName": "str",
-                    "isNullable": False
-                },
-            },
-        ],
-        "featureChannels": [],
-        "labelColumns": {},
-        "scoreColumns": {},
-    }
-    save_data_frame_to_directory(output_path, data=df, schema=schema)
+    OutputHandler.handle_output(
+        data=DataTable(df),
+        file_path=output_path,
+        file_name='data.dataset.parquet',
+        data_type=DataTypes.DATASET,
+    )
     print(f"DataFrame dumped: {df}")
 
 
