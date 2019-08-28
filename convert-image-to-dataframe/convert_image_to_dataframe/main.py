@@ -7,7 +7,7 @@ from azureml.studio.common.datatypes import DataTypes
 from azureml.studio.common.datatable.data_table import DataTable
 from azureml.studio.modulehost.handler.port_io_handler import OutputHandler
 
-VERSION = '0.0.7'
+VERSION = '0.0.9'
 IMG_EXTS = {'.jfif', '.png', '.jpg', '.jpeg'}
 
 
@@ -30,6 +30,7 @@ def image_to_df(image_path, output_path):
     if not imgs:
         raise FileNotFoundError(f"No valid image file in path: {image_path}")
 
+    os.makedirs(output_path, exist_ok=True)
     df = pd.DataFrame({'image_string': imgs})
     OutputHandler.handle_output(
         data=DataTable(df),
