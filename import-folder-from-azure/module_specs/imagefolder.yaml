@@ -1,0 +1,50 @@
+name: Import Image Folder
+id: 70393344-7e12-4179-927e-2d318cf40678
+category: Import Data\Import Image
+description: Import an image folder from azure blob storage.
+inputs:
+- name: Account Name
+  type: String
+  description: Specify the azure blob storage account name.
+- name: Account Key
+  type: String
+  description: Specify the azure blob storage account key.
+- name: Blob Path
+  type: String
+  description: Specify the data path to blob.
+outputs:
+- name: Output Folder
+  type: AnyDirectory
+  port: true
+  description: The output folder to store the data.
+implementation:
+  container:
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.2
+      - pip:
+        - --extra-index-url=https://test.pypi.org/simple
+        - ruamel.yaml==0.15.97
+        - fire==0.1.3
+        - azure-storage-blob==1.5.0
+        - git+$(git-url)@$(git-branch)#subdirectory=import-folder-from-azure
+    command:
+    - python
+    - -m
+    - import_folder_from_azure.image
+    args:
+    - --account-name
+    - inputValue: Account Name
+    - --account-key
+    - inputValue: Account Key
+    - --blob-path
+    - inputValue: Blob Path
+    - --output-folder
+    - outputPath: Output Folder
+  invoking:
+    module: import_folder_from_azure.image
+    class: PlaceHolder
+    func: placeholder
