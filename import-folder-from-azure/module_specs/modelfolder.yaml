@@ -14,7 +14,7 @@ inputs:
   description: Specify the data path to blob.
 outputs:
 - name: Output Folder
-  type: ModelFolder
+  type: ModelDirectory
   description: The output folder to store the data.
 implementation:
   container:
