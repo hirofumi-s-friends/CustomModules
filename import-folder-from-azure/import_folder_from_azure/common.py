@@ -19,7 +19,7 @@ class BlobDownloader:
         self.blob_service = BlockBlobService(account_name=account_name, account_key=account_key)
         self.logger = logger
 
-    def download_files_from_blob(self, container, blob_paths, prefix_len, output_folder):
+    def download_files_from_blob(self, container, blob_paths, prefix_len, output_folder, filter_condition=None):
         files = []
         for blob_path in blob_paths:
             file_name = blob_path[prefix_len:]
@@ -27,6 +27,9 @@ class BlobDownloader:
             folder = os.path.dirname(os.path.join(output_folder, file_name))
             os.makedirs(folder, exist_ok=True)
 
+            if filter_condition and not filter_condition(file_name):
+                self.logger.info(f"Condition not satisfied, pass file: {file_name}")
+                continue
             self.logger.info(f"Start downloading file: {file_name}")
             self.blob_service.get_blob_to_path(
                 container_name=container,
@@ -39,7 +42,7 @@ class BlobDownloader:
             raise Exception("File not found in path")
         self.logger.info(f"{len(files)} files downloaded")
 
-    def import_folder(self, blob_path, output_folder, folder_type='GenericFolder'):
+    def import_folder(self, blob_path, output_folder, folder_type='AnyDirectory', filter_condition=None):
         parts = blob_path.strip(self._URL_DELIMITER).split(self._URL_DELIMITER)
         container = parts[0]
         blob_path = self._URL_DELIMITER.join(parts[1:]) + self._URL_DELIMITER
@@ -47,7 +50,7 @@ class BlobDownloader:
             blob_path = ''
         self.logger.info(f"Blob path parsed: container={container}, path={blob_path}")
         blob_paths = self.blob_service.list_blob_names(container, prefix=blob_path)
-        self.download_files_from_blob(container, blob_paths, len(blob_path), output_folder)
+        self.download_files_from_blob(container, blob_paths, len(blob_path), output_folder, filter_condition)
         create_if_not_exist = folder_type != 'GenericFolder'
         self.ensure_meta(output_folder, folder_type, create_if_not_exist)
 
