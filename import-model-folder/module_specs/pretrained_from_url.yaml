@@ -6,13 +6,14 @@ inputs:
 - name: URL
   type: String
   description: Specify the url of the pretrained model.
-- name: File Name
+- name: Model Name
   type: String
   default: ""
-  description: Specify the file name in output folder.
+  description: Specify the model name.
 outputs:
 - name: Output Folder
-  type: ModelFolder
+  type: ModelDirectory
+  port: true
   description: The output folder to store the dataset.
 implementation:
   container:
@@ -37,7 +38,7 @@ implementation:
     args:
     - --url
     - inputValue: URL
-    - --file-name
-    - inputValue: File Name
+    - --model-name
+    - inputValue: Model Name
     - --output-folder
     - outputPath: Output Folder
