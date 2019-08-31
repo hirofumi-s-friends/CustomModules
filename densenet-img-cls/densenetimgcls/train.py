@@ -116,7 +116,7 @@ def train(model, train_set, valid_set, save_path, epochs, batch_size,
             break
 
 
-def entrance(model_path='/home/root/chjinche/projects/img_cls/denseNet/pretrained', data_path='/home/root/chjinche/projects/img_cls/small', save_path='saved_model',
+def entrance(model_path='', data_path='', save_path='saved_model',
              model_type='densenet201', pretrained=True, memory_efficient=False,
              num_classes=3, epochs=100, batch_size=16, learning_rate=0.001, random_seed=231, patience=2):
     train_transforms, test_transforms = get_transform()

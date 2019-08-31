@@ -33,7 +33,7 @@ def _new_densenet(arch, growth_rate, block_config, num_init_features, pretrained
 
 
 class MyDenseNet(nn.Module):
-    def __init__(self, model_type='densenet201', model_path='/home/root/chjinche/projects/img_cls/denseNet/pretrained/', pretrained=True,
+    def __init__(self, model_type='densenet201', model_path='', pretrained=True,
                  memory_efficient=False, classes=20):
         super(MyDenseNet, self).__init__()
         densenet._densenet = _new_densenet
@@ -49,3 +49,9 @@ class MyDenseNet(nn.Module):
         output = self.model1(input)
         output = self.model2(output)
         return output
+
+
+if __name__ == '__main__':
+    net = MyDenseNet()
+    # workaround for import packages without explicit use
+    print(f"Load pretrained densenet func explicitly: {densenet121, densenet161, densenet169, densenet201}")

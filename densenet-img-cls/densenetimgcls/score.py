@@ -74,4 +74,6 @@ def entrance(model_path='script/saved_model', data_path='script/outputs', save_p
 
 
 if __name__ == '__main__':
+    # workaround for import packages without explicit use
+    logger.info(f"Load pyarrow.parquet explicitly: {pq}")
     fire.Fire(entrance)

@@ -50,7 +50,7 @@ def save_checkpoint(state, is_best, save_path, patience):
     if is_best:
         best_checkpoint_path = os.path.join(save_path, 'best_model.pth')
         torch.save(state["state_dict"], best_checkpoint_path)
-        message = "Get better top1 accuracy: {:.4f} saving weights to {}\n".format(state["best_accuracy"], best_checkpoint_path)
+        message = f'Get better top1 accuracy: {state["best_accuracy"]:.4f} saving weights to {best_checkpoint_path}\n'
         logger.info(message)
         with open(os.path.join(save_path, 'log.txt'), 'a') as fout:
             fout.write(message)
@@ -65,8 +65,10 @@ def save_checkpoint(state, is_best, save_path, patience):
 
 def get_transform():
     # mean and stdv of imagenet dataset.
-    # Usually if you use case in the same data domain as imagenet, the mean and std won’t be that different and you can try to use the ImageNet statistics.
-    # To do: If you are dealing with another domain, e.g. medical images, re-calculate stats on your own data is recommended.
+    # Usually if you use case in the same data domain as imagenet,
+    # the mean and std won’t be that different and you can try to use the ImageNet statistics.
+    # To do: If you are dealing with another domain, e.g. medical images,
+    # re-calculate stats on your own data is recommended.
     mean = [0.485, 0.456, 0.406]
     stdv = [0.229, 0.224, 0.225]
     train_transforms = transforms.Compose([
