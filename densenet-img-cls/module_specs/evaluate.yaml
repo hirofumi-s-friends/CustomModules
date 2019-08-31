@@ -1,0 +1,81 @@
+name: DenseNet Image Cls Evaluate
+id: 32df2321-56a9-45e5-b20e-bafebb070282
+category: Machine Learning\Evaluate
+description: Load a DenseNet for image classification and evaluate it
+inputs:
+- name: Model path
+  type: ModelFolder
+  port: True
+  description: model_path
+- name: Data path
+  type: GenericFolder
+  port: True
+  description: data_path
+- name: Model type
+  type: Mode
+  default: 'densenet201'
+  description: model_type
+  options:
+    - 'densenet201'
+    - 'densenet169'
+    - 'densenet161'
+    - 'densenet121'
+- name: Memory efficient
+  type: Boolean
+  default: False
+  description: memory_efficient
+- name: Num of classes
+  type: Int
+  default: 257
+  description: num of classes
+- name: Batch size
+  type: Int
+  default: 16
+  description: batch size
+outputs:
+- name: Metric save path
+  type: DataFrameDirectory
+  description: metric save path
+- name: Pred save path
+  type: DataFrameDirectory
+  description: pred save path
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda10.0-cudnn7-ubuntu16.04
+      gpuSupport: True
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.2
+      - pip:
+        - --extra-index-url=https://test.pypi.org/simple
+        - ruamel.yaml==0.15.89
+        - alghost==0.0.78
+        - fire==0.1.3
+        - https://download.pytorch.org/whl/cu100/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
+        - https://download.pytorch.org/whl/cu100/torchvision-0.3.0-cp36-cp36m-linux_x86_64.whl
+        - git+https://github.com/chjinche/CustomModules-1.git@master#subdirectory=azureml-custom-module-examples/densenet-img-cls
+    command:
+    - python
+    - -m
+    - densenetimgcls.evaluate
+    args:
+    - --model_path
+    - inputValue: Model path
+    - --model_type
+    - inputValue: Model type
+    - --memory_efficient
+    - inputValue: Memory efficient
+    - --num_classes
+    - inputValue: Num of classes
+    - --data_path
+    - inputValue: Data path
+    - --batch_size
+    - inputValue: Batch size
+    - --metric_save_path
+    - outputPath: Metric save path
+    - --pred_save_path
+    - outputPath: Pred save path
