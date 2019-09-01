@@ -1,6 +1,6 @@
 from torchvision import datasets
 from shutil import copyfile
-from .densenet import MyDenseNet
+from .densenet import DenseNet
 from .utils import save_checkpoint, AverageMeter, get_transform, evaluate, logger
 from .smt_fake import smt_fake_model
 import os
@@ -128,8 +128,8 @@ def entrance(model_path='', data_path='', save_path='saved_model',
     valid_indices = indices[len(indices) - valid_size:]
     train_set = torch.utils.data.Subset(train_set, train_indices)
     valid_set = torch.utils.data.Subset(valid_set, valid_indices)
-    model = MyDenseNet(model_type=model_type, model_path=model_path,
-                       pretrained=pretrained, memory_efficient=memory_efficient, classes=num_classes)
+    model = DenseNet(model_type=model_type, model_path=model_path,
+                     pretrained=pretrained, memory_efficient=memory_efficient, classes=num_classes)
     os.makedirs(save_path, exist_ok=True)
     train(model=model, train_set=train_set, valid_set=valid_set,
           save_path=save_path, epochs=epochs, batch_size=batch_size, lr=learning_rate,

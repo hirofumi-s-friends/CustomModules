@@ -1,5 +1,5 @@
 from torchvision import transforms
-from .densenet import MyDenseNet
+from .densenet import DenseNet
 import torch
 import os
 import time
@@ -35,7 +35,7 @@ class AverageMeter(object):
 
 
 def save_checkpoint(state, is_best, save_path, patience):
-    # To do: save checkpoint files, but removed now to increase web service deployment efficiency
+    # todo: save checkpoint files, but removed now to increase web service deployment efficiency
     # checkpoint_path = os.path.join(save_path, 'model_epoch_{}.pth'.format(state["epoch"]))
     # torch.save(state["state_dict"], checkpoint_path)
     log_path = os.path.join(save_path, 'log.txt')
@@ -67,7 +67,7 @@ def get_transform():
     # mean and stdv of imagenet dataset.
     # Usually if you use case in the same data domain as imagenet,
     # the mean and std won’t be that different and you can try to use the ImageNet statistics.
-    # To do: If you are dealing with another domain, e.g. medical images,
+    # todo: If you are dealing with another domain, e.g. medical images,
     # re-calculate stats on your own data is recommended.
     mean = [0.485, 0.456, 0.406]
     stdv = [0.229, 0.224, 0.225]
@@ -88,7 +88,7 @@ def get_transform():
 
 
 def load_model(model_path, model_type, memory_efficient, num_classes):
-    model = MyDenseNet(model_type=model_type, pretrained=False, memory_efficient=memory_efficient, classes=num_classes)
+    model = DenseNet(model_type=model_type, pretrained=False, memory_efficient=memory_efficient, classes=num_classes)
     model.load_state_dict(torch.load(os.path.join(model_path, 'best_model.pth'), map_location='cpu'))
     if torch.cuda.is_available():
         model = model.cuda()
