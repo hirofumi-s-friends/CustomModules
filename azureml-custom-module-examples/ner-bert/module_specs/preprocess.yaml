@@ -1,5 +1,6 @@
 name: NER Preprocess
 id: 90393344-7e12-4179-927d-2d318cf416cb
+version: 0.0.6.0
 category: Machine Learning\Preprocess
 description: NER Preprocess module
 owner: Jincheng Chen
@@ -43,6 +44,7 @@ implementation:
       - pip:
         - --extra-index-url=https://test.pypi.org/simple
         - https://download.pytorch.org/whl/cu100/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
+        - regex==2019.11.1
         - pytorch-pretrained-bert==0.6.1
         - seqeval==0.0.5
         - tqdm==4.31.1
