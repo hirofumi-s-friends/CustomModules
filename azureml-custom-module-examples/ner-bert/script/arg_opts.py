@@ -4,17 +4,17 @@ import argparse
 def preprocess_opts():
     parser = argparse.ArgumentParser()
     # Required parameters
-    parser.add_argument("--input_data_frame_path",
+    parser.add_argument("--input-data-frame-path",
                         default=None,
                         type=str,
                         required=True,
                         help="The input data frame path. Should be the .parquet file for the task.")
-    parser.add_argument("--output_feature_dir",
+    parser.add_argument("--output-feature-dir",
                         default="output",
                         type=str,
                         required=True,
                         help="The feature dir.")
-    parser.add_argument("--bert_model",
+    parser.add_argument("--bert-model",
                         default="bert-base-cased",
                         type=str,
                         required=True,
@@ -22,13 +22,13 @@ def preprocess_opts():
                         "bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, "
                         "bert-base-multilingual-cased, bert-base-chinese.")
     # Other parameters
-    parser.add_argument("--max_seq_length",
+    parser.add_argument("--max-seq-length",
                         default=128,
                         type=int,
                         help="The maximum total input sequence length after WordPiece tokenization. \n"
                              "Sequences longer than this will be truncated, and sequences shorter \n"
                              "than this will be padded.")
-    parser.add_argument("--do_lower_case",
+    parser.add_argument("--do-lower-case",
                         default='False',
                         type=str,
                         help="Set this flag if you are using an uncased model.")
@@ -40,19 +40,19 @@ def train_opts():
     parser = argparse.ArgumentParser()
 
     # Required parameters
-    parser.add_argument("--train_feature_dir",
+    parser.add_argument("--train-feature-dir",
                         default=None,
                         type=str,
                         required=True,
                         help="The train feature dir. Should be the data frame files for the task.")
-    parser.add_argument("--bert_model",
+    parser.add_argument("--bert-model",
                         default="bert-base-cased",
                         type=str,
                         required=True,
                         help="Bert pre-trained model selected in the list: bert-base-uncased, "
                         "bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, "
                         "bert-base-multilingual-cased, bert-base-chinese.")
-    parser.add_argument("--output_model_dir",
+    parser.add_argument("--output-model-dir",
                         default=None,
                         type=str,
                         required=True,
@@ -62,13 +62,13 @@ def train_opts():
                         default="",
                         type=str,
                         help="Where do you want to store the pre-trained models downloaded from s3")
-    parser.add_argument("--max_seq_length",
+    parser.add_argument("--max-seq-length",
                         default=128,
                         type=int,
                         help="The maximum total input sequence length after WordPiece tokenization. \n"
                              "Sequences longer than this will be truncated, and sequences shorter \n"
                              "than this will be padded.")
-    parser.add_argument("--do_lower_case",
+    parser.add_argument("--do-lower-case",
                         action='store_true',
                         help="Set this flag if you are using an uncased model.")
     parser.add_argument("--train_batch_size",
@@ -79,19 +79,19 @@ def train_opts():
                         default=5e-5,
                         type=float,
                         help="The initial learning rate for Adam.")
-    parser.add_argument("--num_train_epochs",
+    parser.add_argument("--num-train-epochs",
                         default=3.0,
                         type=float,
                         help="Total number of training epochs to perform.")
-    parser.add_argument("--warmup_proportion",
+    parser.add_argument("--warmup-proportion",
                         default=0.1,
                         type=float,
                         help="Proportion of training to perform linear learning rate warmup for. "
                              "E.g., 0.1 = 10%% of training.")
-    parser.add_argument("--no_cuda",
+    parser.add_argument("--no-cuda",
                         action='store_true',
                         help="Whether not to use CUDA when available")
-    parser.add_argument("--local_rank",
+    parser.add_argument("--local-rank",
                         default=-1,
                         type=int,
                         help="local_rank for distributed training on gpus")
@@ -120,30 +120,30 @@ def score_opts():
     parser = argparse.ArgumentParser()
 
     # Required parameters
-    parser.add_argument("--test_feature_dir",
+    parser.add_argument("--test-feature-dir",
                         default=None,
                         type=str,
                         required=True,
                         help="The test feature dir. Should be the .parquet files for the task.")
-    parser.add_argument("--trained_model_dir",
+    parser.add_argument("--trained-model-dir",
                         default=None,
                         type=str,
                         required=True,
                         help="trained model folder")
     # Other parameters
-    parser.add_argument("--output_eval_dir",
+    parser.add_argument("--output-eval-dir",
                         default=None,
                         type=str,
                         help="The output directory where evaluation results will be written.")
-    parser.add_argument("--no_cuda",
+    parser.add_argument("--no-cuda",
                         default='False',
                         type=str,
                         help="Whether not to use CUDA when available")
-    parser.add_argument("--local_rank",
+    parser.add_argument("--local-rank",
                         default=-1,
                         type=int,
                         help="local_rank for distributed training on gpus")
-    parser.add_argument("--test_batch_size",
+    parser.add_argument("--test-batch-size",
                         default=8,
                         type=int,
                         help="Total batch size for eval.")

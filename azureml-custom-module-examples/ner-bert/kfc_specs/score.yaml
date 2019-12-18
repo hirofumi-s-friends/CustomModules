@@ -2,10 +2,10 @@ name: NER Score
 description: NER score module
 inputs:
 - name: Trained model
-  type: ModelFolder
+  type: ModelDirectory
   description: Trained model folder
 - name: Input test data
-  type: TabularDataFolder
+  type: DataFrameDirectory
   description: input test data
 - name: No cuda
   type: Boolean
@@ -21,7 +21,7 @@ inputs:
   description: Total batch size for eval
 outputs:
 - name: Output evaluation results
-  type: TabularDataFolder
+  type: DataFrameDirectory
   description: The output directory where prediction and evaluation results will be written.
 implementation:
   container:
@@ -31,16 +31,16 @@ implementation:
     - -m
     - script.score
     args:
-    - --trained_model_dir
+    - --trained-model-dir
     - inputValue: Trained model
-    - --test_feature_dir
+    - --test-feature-dir
     - inputValue: Input test data
-    - --no_cuda
+    - --no-cuda
     - inputValue: No cuda
-    - --local_rank
+    - --local-rank
     - inputValue: Local Rank
-    - --test_batch_size
+    - --test-batch-size
     - inputValue: Test Batch Size
-    - --output_eval_dir
+    - --output-eval-dir
     - outputPath: Output evaluation results
 
