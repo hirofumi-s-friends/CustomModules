@@ -1,6 +1,6 @@
 name: NER Score
 id: d4098d60-4239-416a-ab41-1cd1e6dad761
-version: 0.0.11.0
+version: 0.0.12.0
 category: Machine Learning\Score
 description: NER score module.
 owner: Jincheng Chen
