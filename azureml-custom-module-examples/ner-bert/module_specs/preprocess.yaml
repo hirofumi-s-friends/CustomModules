@@ -1,6 +1,6 @@
 name: NER Preprocess
 id: 90393344-7e12-4179-927d-2d318cf416cb
-version: 0.0.8.0
+version: 0.0.9.0
 category: Machine Learning\Preprocess
 description: NER Preprocess module.
 owner: Jincheng Chen
