@@ -57,7 +57,7 @@ implementation:
         - torchvision==0.3.0
         - pandas==0.24.1
         - pyarrow==0.12.1
-        - git+https://github.com/chjinche/azureml-custom-module-examples.git@master#subdirectory=ner-bert
+        - git+https://github.com/weedqian/CustomModules-1.git@weda/ner-demo#subdirectory=azureml-custom-module-examples/ner-bert
     command:
     - python
     - -m
