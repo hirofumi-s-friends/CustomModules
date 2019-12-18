@@ -1,6 +1,6 @@
 name: NER Train
 id: 35ff6570-c9af-4304-a57a-2b63ba216396
-version: 0.0.7.0
+version: 0.0.8.0
 category: Machine Learning\Train
 description: NER train module.
 owner: Jincheng Chen
