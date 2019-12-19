@@ -1,0 +1,79 @@
+name: NER Score
+id: d4098d60-4239-416a-ab41-1cd1e6dad761
+version: 0.0.12.0
+category: Machine Learning\Score
+description: NER score module.
+owner: Jincheng Chen
+inputs:
+- name: Trained model
+  type: ModelDirectory
+  port: True
+  description: Trained model folder
+- name: Input test data
+  type: DataFrameDirectory
+  port: True
+  description: input test data
+- name: No cuda
+  type: Boolean
+  default: False
+  description: Whether not to use CUDA when available
+- name: Local rank
+  type: Int
+  default: -1
+  description: local_rank for distributed training on gpus
+- name: Test batch size
+  type: Int
+  default: 8
+  description: Total batch size for eval
+outputs:
+- name: Output evaluation results
+  type: DataFrameDirectory
+  description: The output directory where prediction and evaluation results will be written.
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda10.0-cudnn7-ubuntu16.04
+      gpuSupport: True    
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.2
+      - pip:
+        - --extra-index-url=https://test.pypi.org/simple
+        - https://download.pytorch.org/whl/cu100/torch-1.1.0-cp36-cp36m-linux_x86_64.whl
+        - azureml==0.2.7
+        - azureml-core==1.0.43
+        - regex==2019.11.1
+        - pytorch-pretrained-bert==0.6.1
+        - seqeval==0.0.5
+        - tqdm==4.31.1
+        - nltk==3.4
+        - torchvision==0.3.0
+        - pandas==0.24.1
+        - pyarrow==0.12.1
+        - scikit-plot==0.3.7
+        - matplotlib==3.1.0
+        - git+https://github.com/hirofumi-s-friends/CustomModules.git@master#subdirectory=azureml-custom-module-examples/ner-bert
+    command:
+    - python
+    - -m
+    - script.score
+    args:
+    - --trained-model-dir
+    - inputPath: Trained model
+    - --test-feature-dir
+    - inputPath: Input test data
+    - --no-cuda
+    - inputValue: No cuda
+    - --local-rank
+    - inputValue: Local rank
+    - --test-batch-size
+    - inputValue: Test batch size
+    - --output-eval-dir
+    - outputPath: Output evaluation results
+  invoking:
+    module: script.score
+    class: Ner
+    func: run    

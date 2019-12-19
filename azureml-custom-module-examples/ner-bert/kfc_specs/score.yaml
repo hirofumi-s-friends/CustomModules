@@ -1,0 +1,46 @@
+name: NER Score
+description: NER score module
+inputs:
+- name: Trained model
+  type: ModelDirectory
+  description: Trained model folder
+- name: Input test data
+  type: DataFrameDirectory
+  description: input test data
+- name: No cuda
+  type: Boolean
+  default: False
+  description: Whether not to use CUDA when available
+- name: Local Rank
+  type: Int
+  default: -1
+  description: local_rank for distributed training on gpus
+- name: Test Batch Size
+  type: Int
+  default: 8
+  description: Total batch size for eval
+outputs:
+- name: Output evaluation results
+  type: DataFrameDirectory
+  description: The output directory where prediction and evaluation results will be written.
+implementation:
+  container:
+    image: mycorp/my-docker-image
+    command:
+    - python
+    - -m
+    - script.score
+    args:
+    - --trained-model-dir
+    - inputValue: Trained model
+    - --test-feature-dir
+    - inputValue: Input test data
+    - --no-cuda
+    - inputValue: No cuda
+    - --local-rank
+    - inputValue: Local Rank
+    - --test-batch-size
+    - inputValue: Test Batch Size
+    - --output-eval-dir
+    - outputPath: Output evaluation results
+
