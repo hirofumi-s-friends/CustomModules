@@ -2,7 +2,7 @@ name: NER Train
 description: NER train module
 inputs:
 - name: Input train data
-  type: TabularDataFolder
+  type: DataFrameDirectory
   description: input train data
 - name: BERT pretrained model
   type: String
@@ -23,7 +23,7 @@ inputs:
   description: Specify warmup proportion
 outputs:
 - name: Output model
-  type: ModelFolder
+  type: ModelDirectory
   description: The output directory where the model predictions and checkpoints will be written.
 implementation:
   container:
@@ -33,15 +33,15 @@ implementation:
     - -m
     - script.train
     args:
-    - --train_feature_dir
+    - --train-feature-dir
     - inputValue: Input train data
-    - --bert_model
+    - --bert-model
     - inputValue: BERT pretrained model
-    - --max_seq_length
+    - --max-seq-length
     - inputValue: Maximum sequence length
-    - --num_train_epochs
+    - --num-train-epochs
     - inputValue: Number of training epochs
-    - --warmup_proportion
+    - --warmup-proportion
     - inputValue: Warmup proportion
-    - --output_model_dir
+    - --output-model-dir
     - outputPath: Output model

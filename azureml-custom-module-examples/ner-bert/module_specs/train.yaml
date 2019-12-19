@@ -1,15 +1,15 @@
 name: NER Train
 id: 35ff6570-c9af-4304-a57a-2b63ba216396
-version: 0.0.5.0
+version: 0.0.12.0
 category: Machine Learning\Train
-description: NER train module
+description: NER train module.
 owner: Jincheng Chen
 inputs:
 - name: Input train data
-  type: TabularDataFolder
+  type: DataFrameDirectory
   port: True
   description: input train data
-- name: BERT pretrained model
+- name: Bert pretrained model
   type: Mode
   default: "bert-base-cased"
   description: Specify BERT pretrained model
@@ -33,7 +33,7 @@ inputs:
   description: Specify warmup proportion
 outputs:
 - name: Output model
-  type: ModelFolder
+  type: ModelDirectory
   description: The output directory where the model predictions and checkpoints will be written.
 implementation:
   container:
@@ -57,21 +57,21 @@ implementation:
         - torchvision==0.3.0
         - pandas==0.24.1
         - pyarrow==0.12.1
-        - git+https://github.com/chjinche/azureml-custom-module-examples.git@master#subdirectory=ner-bert
+        - git+https://github.com/hirofumi-s-friends/CustomModules.git@master#subdirectory=azureml-custom-module-examples/ner-bert
     command:
     - python
     - -m
     - script.train
     args:
-    - --train_feature_dir
+    - --train-feature-dir
     - inputValue: Input train data
-    - --bert_model
-    - inputValue: BERT pretrained model
-    - --max_seq_length
+    - --bert-model
+    - inputValue: Bert pretrained model
+    - --max-seq-length
     - inputValue: Maximum sequence length
-    - --num_train_epochs
+    - --num-train-epochs
     - inputValue: Number of training epochs
-    - --warmup_proportion
+    - --warmup-proportion
     - inputValue: Warmup proportion
-    - --output_model_dir
+    - --output-model-dir
     - outputPath: Output model

@@ -1,33 +1,33 @@
 name: NER Score
 id: d4098d60-4239-416a-ab41-1cd1e6dad761
-version: 0.0.5.0
+version: 0.0.12.0
 category: Machine Learning\Score
-description: NER score module
+description: NER score module.
 owner: Jincheng Chen
 inputs:
 - name: Trained model
-  type: ModelFolder
+  type: ModelDirectory
   port: True
   description: Trained model folder
 - name: Input test data
-  type: TabularDataFolder
+  type: DataFrameDirectory
   port: True
   description: input test data
 - name: No cuda
   type: Boolean
   default: False
   description: Whether not to use CUDA when available
-- name: Local Rank
+- name: Local rank
   type: Int
   default: -1
   description: local_rank for distributed training on gpus
-- name: Test Batch Size
+- name: Test batch size
   type: Int
   default: 8
   description: Total batch size for eval
 outputs:
 - name: Output evaluation results
-  type: TabularDataFolder
+  type: DataFrameDirectory
   description: The output directory where prediction and evaluation results will be written.
 implementation:
   container:
@@ -55,23 +55,23 @@ implementation:
         - pyarrow==0.12.1
         - scikit-plot==0.3.7
         - matplotlib==3.1.0
-        - git+https://github.com/chjinche/azureml-custom-module-examples.git@master#subdirectory=ner-bert
+        - git+https://github.com/hirofumi-s-friends/CustomModules.git@master#subdirectory=azureml-custom-module-examples/ner-bert
     command:
     - python
     - -m
     - script.score
     args:
-    - --trained_model_dir
-    - inputValue: Trained model
-    - --test_feature_dir
-    - inputValue: Input test data
-    - --no_cuda
+    - --trained-model-dir
+    - inputPath: Trained model
+    - --test-feature-dir
+    - inputPath: Input test data
+    - --no-cuda
     - inputValue: No cuda
-    - --local_rank
-    - inputValue: Local Rank
-    - --test_batch_size
-    - inputValue: Test Batch Size
-    - --output_eval_dir
+    - --local-rank
+    - inputValue: Local rank
+    - --test-batch-size
+    - inputValue: Test batch size
+    - --output-eval-dir
     - outputPath: Output evaluation results
   invoking:
     module: script.score

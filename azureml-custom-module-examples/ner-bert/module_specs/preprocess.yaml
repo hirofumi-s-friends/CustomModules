@@ -1,15 +1,15 @@
 name: NER Preprocess
 id: 90393344-7e12-4179-927d-2d318cf416cb
-version: 0.0.5.0
+version: 0.0.12.0
 category: Machine Learning\Preprocess
-description: NER Preprocess module
+description: NER Preprocess module.
 owner: Jincheng Chen
 inputs:
 - name: Input data
-  type: TabularDataFolder
+  type: DataFrameDirectory
   port: True
   description: input data frame
-- name: BERT pretrained model
+- name: Bert pretrained model
   type: String
   default: "bert-base-cased"
   description: Specify BERT pretrained model
@@ -28,7 +28,7 @@ inputs:
   description: Specify maximum sequence length
 outputs:
 - name: Output feature
-  type: TabularDataFolder
+  type: DataFrameDirectory
   description: The output feature
 implementation:
   container:
@@ -52,21 +52,21 @@ implementation:
         - torchvision==0.3.0
         - pandas==0.24.1
         - pyarrow==0.12.1
-        - git+https://github.com/chjinche/azureml-custom-module-examples.git@master#subdirectory=ner-bert
+        - git+https://github.com/hirofumi-s-friends/CustomModules.git@master#subdirectory=azureml-custom-module-examples/ner-bert
     command:
     - python
     - -m
     - script.preprocess
     args:
-    - --input_data_frame_path
-    - inputValue: Input data
-    - --bert_model
-    - inputValue: BERT pretrained model
-    - --do_lower_case
+    - --input-data-frame-path
+    - inputPath: Input data
+    - --bert-model
+    - inputValue: Bert pretrained model
+    - --do-lower-case
     - inputValue: Do lower case
-    - --max_seq_length
+    - --max-seq-length
     - inputValue: Maximum sequence length
-    - --output_feature_dir
+    - --output-feature-dir
     - outputPath: Output feature
   invoking:
     module: script.preprocess
