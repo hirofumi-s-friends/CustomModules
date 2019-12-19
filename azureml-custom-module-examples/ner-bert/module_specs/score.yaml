@@ -55,7 +55,7 @@ implementation:
         - pyarrow==0.12.1
         - scikit-plot==0.3.7
         - matplotlib==3.1.0
-        - git+https://github.com/weedqian/CustomModules-1.git@weda/ner-demo#subdirectory=azureml-custom-module-examples/ner-bert
+        - git+https://github.com/hirofumi-s-friends/CustomModules.git@master#subdirectory=azureml-custom-module-examples/ner-bert
     command:
     - python
     - -m
