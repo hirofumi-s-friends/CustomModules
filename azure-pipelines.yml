@@ -12,7 +12,7 @@ pool:
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.6.8' 
+    versionSpec: '3.6.9' 
     addToPath: true 
     #architecture: 'x64' # Options: x86, x64 (this argument applies only on Windows agents)
 
