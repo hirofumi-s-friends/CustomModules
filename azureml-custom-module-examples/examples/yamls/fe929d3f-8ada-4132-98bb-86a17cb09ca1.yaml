@@ -1,0 +1,48 @@
+name: fe929d3f-8ada-4132-98bb-86a17cb09ca1
+id: fe929d3f-8ada-4132-98bb-86a17cb09ca1
+category: Office
+version: 0.0.1.3
+inputs:
+- name: input_file_name
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: COLUMN_LIST
+  optional: true
+  type: String
+- name: INCLUSIVE_OR_EXCLUSIVE
+  optional: true
+  type: Int
+  default: '1'
+outputs:
+- name: output_file_name
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: input_file_name
+    - --output-0
+    - outputPath: output_file_name
+    - --param-0
+    - inputValue: COLUMN_LIST
+    - --param-1
+    - inputValue: INCLUSIVE_OR_EXCLUSIVE

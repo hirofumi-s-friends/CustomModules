@@ -1,0 +1,62 @@
+name: 029da5e7-6213-4769-a024-da086605147e
+id: 029da5e7-6213-4769-a024-da086605147e
+category: Office
+version: 0.0.1.3
+inputs:
+- name: InputModels
+  type: &id001
+  - AzureEncryptedBlobReference
+  - AzureEncryptedBlobFileReference
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference
+  port: true
+  optional: true
+- name: CSRankerName
+  optional: true
+  type: String
+  default: Ranker{i}
+- name: Threshold Precision
+  optional: true
+  type: Int
+  default: '-1'
+- name: Output Precision
+  optional: true
+  type: Int
+  default: '-1'
+outputs:
+- name: CS_Models
+  type: *id001
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference
+  port: true
+  optional: true
+- name: Ini_Models
+  type: *id001
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: InputModels
+    - --output-0
+    - outputPath: CS_Models
+    - --output-1
+    - outputPath: Ini_Models
+    - --param-0
+    - inputValue: CSRankerName
+    - --param-1
+    - inputValue: Threshold Precision
+    - --param-2
+    - inputValue: Output Precision

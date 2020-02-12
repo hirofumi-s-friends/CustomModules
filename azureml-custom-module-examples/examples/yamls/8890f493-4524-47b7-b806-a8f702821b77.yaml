@@ -1,0 +1,43 @@
+name: 8890f493-4524-47b7-b806-a8f702821b77
+id: 8890f493-4524-47b7-b806-a8f702821b77
+category: Office
+version: 0.0.1.3
+inputs:
+- name: input_emails_in_json
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+- name: columns
+  optional: true
+  type: String
+  default: '3'
+outputs:
+- name: output_folder
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: input_emails_in_json
+    - --output-0
+    - outputPath: output_folder
+    - --param-0
+    - inputValue: columns

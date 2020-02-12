@@ -1,0 +1,129 @@
+name: bd445246-2dfc-47be-a4d4-278e63f26421
+id: bd445246-2dfc-47be-a4d4-278e63f26421
+category: Office
+version: 0.0.1.3
+inputs:
+- name: Training Data
+  type:
+  - ExtractionTSV
+  - GenericTSV
+  description: ExtractionTSV,GenericTSV
+  port: true
+  optional: true
+- name: Test Data
+  type:
+  - ExtractionTSV
+  - GenericTSV
+  description: ExtractionTSV,GenericTSV
+  port: true
+  optional: true
+- name: Validation Data
+  type:
+  - ExtractionTSV
+  - GenericTSV
+  description: ExtractionTSV,GenericTSV
+  port: true
+  optional: true
+- name: InputModel
+  type:
+  - GenericBinary
+  description: GenericBinary
+  port: true
+  optional: true
+- name: Predictor
+  optional: true
+  type: String
+  default: FastTreeBinaryClassification
+- name: Loader Config
+  optional: true
+  type: String
+  default: TextLoader
+- name: Transforms
+  optional: true
+  type: String
+- name: Cache Examples in Memory
+  optional: true
+  type: String
+  default: +
+- name: Calibrator Class
+  optional: true
+  type: String
+- name: Evaluator Class
+  optional: true
+  type: String
+- name: Scorer Class
+  optional: true
+  type: String
+- name: Random seed
+  optional: true
+  type: Int
+  default: '1'
+- name: Extra Arguments
+  optional: true
+  type: String
+outputs:
+- name: Trained Model
+  type:
+  - GenericBinary
+  description: GenericBinary
+  port: true
+  optional: true
+- name: Tested Model Summary
+  type:
+  - GenericText
+  description: GenericText
+  port: true
+  optional: true
+- name: Per-Instance Predictions
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: Training Data
+    - --input-1
+    - inputPath: Test Data
+    - --input-2
+    - inputPath: Validation Data
+    - --input-3
+    - inputPath: InputModel
+    - --output-0
+    - outputPath: Trained Model
+    - --output-1
+    - outputPath: Tested Model Summary
+    - --output-2
+    - outputPath: Per-Instance Predictions
+    - --param-0
+    - inputValue: Predictor
+    - --param-1
+    - inputValue: Loader Config
+    - --param-2
+    - inputValue: Transforms
+    - --param-3
+    - inputValue: Cache Examples in Memory
+    - --param-4
+    - inputValue: Calibrator Class
+    - --param-5
+    - inputValue: Evaluator Class
+    - --param-6
+    - inputValue: Scorer Class
+    - --param-7
+    - inputValue: Random seed
+    - --param-8
+    - inputValue: Extra Arguments

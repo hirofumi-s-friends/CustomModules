@@ -1,0 +1,43 @@
+name: fd1d8bf3-89ac-41c8-a9b8-0c690f3c00d4
+id: fd1d8bf3-89ac-41c8-a9b8-0c690f3c00d4
+category: Office
+version: 0.0.1.3
+inputs:
+- name: input_file_name
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: SUMMARIZABILITY_THRESHOLD
+  optional: true
+  type: String
+  default: '0.01'
+outputs:
+- name: summary_df_output_path
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: input_file_name
+    - --output-0
+    - outputPath: summary_df_output_path
+    - --param-0
+    - inputValue: SUMMARIZABILITY_THRESHOLD

@@ -1,0 +1,52 @@
+name: 288a1861-31b9-4640-b3e2-6899e64d9c22
+id: 288a1861-31b9-4640-b3e2-6899e64d9c22
+category: Office
+version: 0.0.1.3
+inputs:
+- name: Input Directory
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+- name: File To Add
+  type:
+  - GenericText
+  - ExtractionTSV
+  - GenericTSV
+  description: GenericText,ExtractionTSV,GenericTSV
+  port: true
+  optional: true
+- name: File Name
+  optional: true
+  type: String
+outputs:
+- name: Output Directory
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: Input Directory
+    - --input-1
+    - inputPath: File To Add
+    - --output-0
+    - outputPath: Output Directory
+    - --param-0
+    - inputValue: File Name

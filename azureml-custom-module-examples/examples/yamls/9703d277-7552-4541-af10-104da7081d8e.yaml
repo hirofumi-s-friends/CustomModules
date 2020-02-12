@@ -1,0 +1,125 @@
+name: 9703d277-7552-4541-af10-104da7081d8e
+id: 9703d277-7552-4541-af10-104da7081d8e
+category: Office
+version: 0.0.1.3
+inputs:
+- name: input_tsv
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: evaluation_setting_file
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: model_name
+  optional: true
+  type: String
+  default: model_name
+- name: train_dataset
+  optional: true
+  type: String
+  default: train_dataset
+- name: dev_dataset
+  optional: true
+  type: String
+  default: dev_dataset
+- name: test_dataset
+  optional: true
+  type: String
+  default: test_dataset
+- name: truth_scores_column
+  optional: true
+  type: String
+  default: truth
+- name: truth_score_threshold
+  optional: true
+  type: String
+  default: '0.5'
+- name: predicted_scores_column
+  optional: true
+  type: String
+  default: probs
+- name: predicted_score_threshold
+  optional: true
+  type: String
+  default: '0.5'
+- name: min_recall_threshold
+  optional: true
+  type: String
+  default: '0'
+- name: metric_list
+  optional: true
+  type: String
+  default: "''"
+- name: weight_column
+  optional: true
+  type: String
+  default: "''"
+- name: num_bins
+  optional: true
+  type: Int
+  default: '10'
+outputs:
+- name: metric_output_file
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: setting_output_file
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: input_tsv
+    - --input-1
+    - inputPath: evaluation_setting_file
+    - --output-0
+    - outputPath: metric_output_file
+    - --output-1
+    - outputPath: setting_output_file
+    - --param-0
+    - inputValue: model_name
+    - --param-1
+    - inputValue: train_dataset
+    - --param-2
+    - inputValue: dev_dataset
+    - --param-3
+    - inputValue: test_dataset
+    - --param-4
+    - inputValue: truth_scores_column
+    - --param-5
+    - inputValue: truth_score_threshold
+    - --param-6
+    - inputValue: predicted_scores_column
+    - --param-7
+    - inputValue: predicted_score_threshold
+    - --param-8
+    - inputValue: min_recall_threshold
+    - --param-9
+    - inputValue: metric_list
+    - --param-10
+    - inputValue: weight_column
+    - --param-11
+    - inputValue: num_bins

@@ -1,0 +1,48 @@
+name: ddaa4da1-bc77-4188-951f-74b278432e75
+id: ddaa4da1-bc77-4188-951f-74b278432e75
+category: Office
+version: 0.0.1.3
+inputs:
+- name: VSTS Drop Client Binary
+  type:
+  - VSTS_Drop_Client_Binary
+  description: VSTS_Drop_Client_Binary
+  port: true
+  optional: true
+- name: PAT Auth Token
+  optional: true
+  type: String
+- name: BuildNumber
+  optional: true
+  type: String
+  default: '20171011.1'
+outputs:
+- name: Drop Folder
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: VSTS Drop Client Binary
+    - --output-0
+    - outputPath: Drop Folder
+    - --param-0
+    - inputValue: PAT Auth Token
+    - --param-1
+    - inputValue: BuildNumber

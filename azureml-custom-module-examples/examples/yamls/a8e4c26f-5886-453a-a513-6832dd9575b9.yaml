@@ -1,0 +1,60 @@
+name: a8e4c26f-5886-453a-a513-6832dd9575b9
+id: a8e4c26f-5886-453a-a513-6832dd9575b9
+category: Office
+version: 0.0.1.3
+inputs:
+- name: TSV_Folder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: docker_image
+  optional: true
+  type: String
+  default: pytorch:v1.1.0_gpu_cuda9.0_py36_release_gpuenv_hvd0.16.1
+- name: vm_size
+  optional: true
+  type: String
+  default: Standard_DS15_v2
+- name: cluster_id
+  optional: true
+  type: String
+  default: matrixbatchprodeus
+- name: csv_col_indices
+  optional: true
+  type: String
+outputs:
+- name: TSV_Folder Out
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: TSV_Folder
+    - --output-0
+    - outputPath: TSV_Folder Out
+    - --param-0
+    - inputValue: docker_image
+    - --param-1
+    - inputValue: vm_size
+    - --param-2
+    - inputValue: cluster_id
+    - --param-3
+    - inputValue: csv_col_indices

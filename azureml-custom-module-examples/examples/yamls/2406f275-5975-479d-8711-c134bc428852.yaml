@@ -1,0 +1,37 @@
+name: 2406f275-5975-479d-8711-c134bc428852
+id: 2406f275-5975-479d-8711-c134bc428852
+category: Office
+version: 0.0.1.3
+inputs:
+- name: SourcePath
+  type:
+  - AzureBlobPath
+  description: AzureBlobPath
+  port: true
+  optional: true
+outputs:
+- name: File
+  type:
+  - AnyFile
+  description: AnyFile
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: SourcePath
+    - --output-0
+    - outputPath: File

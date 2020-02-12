@@ -1,0 +1,45 @@
+name: b6dbdefc-9f0b-4654-82d9-41a756bcd2e1
+id: b6dbdefc-9f0b-4654-82d9-41a756bcd2e1
+category: Office
+version: 0.0.1.3
+inputs:
+- name: directory_1
+  type:
+  - AnyDirectory
+  description: AnyDirectory
+  port: true
+  optional: true
+- name: directory_2
+  type:
+  - AnyDirectory
+  description: AnyDirectory
+  port: true
+  optional: true
+outputs:
+- name: output_directory
+  type:
+  - AnyDirectory
+  description: AnyDirectory
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: directory_1
+    - --input-1
+    - inputPath: directory_2
+    - --output-0
+    - outputPath: output_directory

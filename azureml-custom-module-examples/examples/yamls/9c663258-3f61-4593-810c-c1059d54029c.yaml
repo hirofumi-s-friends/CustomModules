@@ -1,0 +1,61 @@
+name: 9c663258-3f61-4593-810c-c1059d54029c
+id: 9c663258-3f61-4593-810c-c1059d54029c
+category: Office
+version: 0.0.1.3
+inputs:
+- name: Trained Model
+  type:
+  - GenericBinary
+  description: GenericBinary
+  port: true
+  optional: true
+outputs:
+- name: Trained Model Code
+  type:
+  - GenericText
+  description: GenericText
+  port: true
+  optional: true
+- name: Trained Model Text
+  type:
+  - GenericText
+  description: GenericText
+  port: true
+  optional: true
+- name: Trained Model Summary
+  type:
+  - GenericText
+  description: GenericText
+  port: true
+  optional: true
+- name: Trained Model Ini File
+  type:
+  - FastRankRanker
+  description: FastRankRanker
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: Trained Model
+    - --output-0
+    - outputPath: Trained Model Code
+    - --output-1
+    - outputPath: Trained Model Text
+    - --output-2
+    - outputPath: Trained Model Summary
+    - --output-3
+    - outputPath: Trained Model Ini File

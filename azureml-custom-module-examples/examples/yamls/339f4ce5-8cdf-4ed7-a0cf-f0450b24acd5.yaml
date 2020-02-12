@@ -1,0 +1,45 @@
+name: 339f4ce5-8cdf-4ed7-a0cf-f0450b24acd5
+id: 339f4ce5-8cdf-4ed7-a0cf-f0450b24acd5
+category: Office
+version: 0.0.1.3
+inputs:
+- name: SR_QAS_Model
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: TSVDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+outputs:
+- name: OutputDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: SR_QAS_Model
+    - --input-1
+    - inputPath: TSVDir
+    - --output-0
+    - outputPath: OutputDir

@@ -1,0 +1,77 @@
+name: 880b7756-152c-4021-8d97-754c27c19789
+id: 880b7756-152c-4021-8d97-754c27c19789
+category: Office
+version: 0.0.1.3
+inputs:
+- name: VSTSDropBinary
+  type:
+  - VSTS_Drop_Client_Binary
+  description: VSTS_Drop_Client_Binary
+  port: true
+  optional: true
+- name: VSTSAccount
+  optional: true
+  type: String
+  default: msasg
+- name: PATToken
+  optional: true
+  type: String
+- name: DropFilter
+  optional: true
+  type: String
+  default: MSASG_qas/signing_retail/
+- name: SubFolder
+  optional: true
+  type: String
+  default: retail\amd64\app\httpqas
+- name: OutSubfolder
+  optional: true
+  type: String
+  default: httpqas
+- name: MinFileCount
+  optional: true
+  type: Int
+  default: '0'
+- name: date
+  optional: true
+  type: String
+outputs:
+- name: OutputDir
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: VSTSDropBinary
+    - --output-0
+    - outputPath: OutputDir
+    - --param-0
+    - inputValue: VSTSAccount
+    - --param-1
+    - inputValue: PATToken
+    - --param-2
+    - inputValue: DropFilter
+    - --param-3
+    - inputValue: SubFolder
+    - --param-4
+    - inputValue: OutSubfolder
+    - --param-5
+    - inputValue: MinFileCount
+    - --param-6
+    - inputValue: date

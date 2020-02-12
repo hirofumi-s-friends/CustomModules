@@ -1,0 +1,280 @@
+name: 8a9497dd-16c5-45ad-a6f8-4a6e162b235d
+id: 8a9497dd-16c5-45ad-a6f8-4a6e162b235d
+category: Office
+version: 0.0.1.3
+inputs:
+- name: CalendarInput
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: ExtractionPathEmail
+  optional: true
+  type: String
+- name: ExtractionPathCalendar
+  optional: true
+  type: String
+- name: StartDate
+  optional: true
+  type: String
+- name: UseAllCalendarItems
+  optional: true
+  type: String
+- name: EndDate
+  optional: true
+  type: String
+- name: OutputColumns
+  optional: true
+  type: String
+  default: GroupId, C_Id, C_Uid, C_ConversationIndex, C_CreatedDateTime, C_ResponseStatus,
+    C_IsReminderOn, C_HasAttachments, C_Subject, C_Body, C_RawBody, C_Start, C_End,
+    C_Location, C_IsAllDay, C_IsCancelled, C_IsOrganizer, C_Recurrence, C_IsResponseRequested,
+    C_SeriesMasterId, C_Attendees, C_Organizer, C_Attachments, C_ShowAs, C_Type, C_UserId,
+    E_Id, E_InternetMessageId, E_ReceivedDateTime, E_Subject, E_From, E_ToRecipients,
+    E_CcRecipients, E_BccRecipients, E_ConversationId, E_ConversationIndex, E_UniqueBody,
+    E_RawUniqueBody, E_HasAttachments, E_Importance, E_IsRead, E_IsDraft, E_IsFocussed,
+    E_IsFlagged, E_Attachments, E_UserEmailAddress, E_UserId, E_HoursBeforeStart,
+    E_RecipientsAttendeesIntersection
+- name: SkipFolders
+  optional: true
+  type: String
+  default: ArchiveRoot;ConversationHistory;DeletedItems;JunkEmail
+- name: FilterCalendar
+  optional: true
+  type: String
+  default: WHERE true
+- name: ExtraCalendarClause
+  optional: true
+  type: String
+- name: FilterEmail
+  optional: true
+  type: String
+  default: WHERE true
+- name: ExtraEmailClause
+  optional: true
+  type: String
+- name: FilterCandidates
+  optional: true
+  type: String
+  default: // WHERE E_RecipientsAttendeesIntersection > 0 OR E_OrganizerIsSender >
+    0
+- name: ExtraCandidatesClause
+  optional: true
+  type: String
+- name: DaysInterval
+  optional: true
+  type: Int
+  default: '21'
+- name: NumParts
+  optional: true
+  type: Int
+  default: '1'
+- name: Part
+  optional: true
+  type: Int
+  default: '0'
+- name: CalendarIdsSchema
+  optional: true
+  type: String
+  default: GroupId long, C_Id string, C_Uid string, C_ConversationIndex string, C_CreatedDateTime
+    DateTime, C_ResponseStatus string, C_IsReminderOn bool, C_HasAttachments bool,
+    C_Subject string, C_Body string, C_RawBody string, C_Start DateTime, C_End DateTime,
+    C_Location string, C_IsAllDay bool, C_IsCancelled bool, C_IsOrganizer bool, C_Recurrence
+    string, C_IsResponseRequested bool, C_SeriesMasterId string, C_Attendees string,
+    C_Organizer string, C_Attachments string, C_ShowAs string, C_Type string, C_UserId
+    string, E_Id string, E_InternetMessageId string, E_ReceivedDateTime DateTime,
+    E_Subject string, E_From string, E_ToRecipients string, E_CcRecipients string,
+    E_BccRecipients string, E_ConversationId string, E_ConversationIndex string, E_UniqueBody
+    string, E_RawUniqueBody string, E_HasAttachments bool, E_Importance string, E_IsRead
+    bool, E_IsDraft bool, E_IsFocussed bool, E_IsFlagged bool, E_Attachments string,
+    E_UserEmailAddress string, E_UserId string, E_HoursBeforeStart double, E_RecipientsAttendeesIntersection
+    long
+- name: CalendarIdColumn
+  optional: true
+  type: String
+  default: C_Id
+- name: CalendarUserIdColumn
+  optional: true
+  type: String
+  default: C_UserId
+- name: GroupIdColumns
+  optional: true
+  type: String
+  default: C_UserId, C_Id
+- name: GroupIdColumnName
+  optional: true
+  type: String
+  default: GroupId
+- name: NumSamples
+  optional: true
+  type: Int
+  default: '0'
+- name: SamplingColumns
+  optional: true
+  type: String
+  default: C_UserId, C_Id
+- name: Seed
+  optional: true
+  type: Int
+  default: '666'
+- name: OrderByClause
+  optional: true
+  type: String
+  default: ORDER BY C_Start, C_Id
+- name: Category
+  optional: true
+  type: String
+  default: MSIT
+- name: ProjectName
+  optional: true
+  type: String
+  default: RECOMMENDATIONS
+- name: KeepRooms
+  optional: true
+  type: String
+  default: 'false'
+- name: RunDate
+  optional: true
+  type: String
+- name: DefaultDataLakeAccount
+  optional: true
+  type: String
+  default: o365ccmarscommonnam
+- name: RunAs
+  optional: true
+  type: String
+  default: b16e6a39-e4c0-47d3-a515-feb8d1d593f4
+- name: Tenant
+  optional: true
+  type: String
+  default: prdtrs01.prod.outlook.com
+- name: Priority
+  optional: true
+  type: Int
+  default: '1000'
+- name: DegreesOfParallelism
+  optional: true
+  type: Int
+  default: '100'
+- name: RuntimeVersion
+  optional: true
+  type: String
+- name: AnalyticsAccountName
+  optional: true
+  type: String
+  default: matrixadlaprod
+outputs:
+- name: CandidatesOutput
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputSchema
+  type:
+  - AzureBlobPath
+  description: AzureBlobPath
+  port: true
+  optional: true
+- name: StatsOutput
+  type:
+  - AzureBlobPath
+  description: AzureBlobPath
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: CalendarInput
+    - --output-0
+    - outputPath: CandidatesOutput
+    - --output-1
+    - outputPath: OutputSchema
+    - --output-2
+    - outputPath: StatsOutput
+    - --param-0
+    - inputValue: ExtractionPathEmail
+    - --param-1
+    - inputValue: ExtractionPathCalendar
+    - --param-2
+    - inputValue: StartDate
+    - --param-3
+    - inputValue: UseAllCalendarItems
+    - --param-4
+    - inputValue: EndDate
+    - --param-5
+    - inputValue: OutputColumns
+    - --param-6
+    - inputValue: SkipFolders
+    - --param-7
+    - inputValue: FilterCalendar
+    - --param-8
+    - inputValue: ExtraCalendarClause
+    - --param-9
+    - inputValue: FilterEmail
+    - --param-10
+    - inputValue: ExtraEmailClause
+    - --param-11
+    - inputValue: FilterCandidates
+    - --param-12
+    - inputValue: ExtraCandidatesClause
+    - --param-13
+    - inputValue: DaysInterval
+    - --param-14
+    - inputValue: NumParts
+    - --param-15
+    - inputValue: Part
+    - --param-16
+    - inputValue: CalendarIdsSchema
+    - --param-17
+    - inputValue: CalendarIdColumn
+    - --param-18
+    - inputValue: CalendarUserIdColumn
+    - --param-19
+    - inputValue: GroupIdColumns
+    - --param-20
+    - inputValue: GroupIdColumnName
+    - --param-21
+    - inputValue: NumSamples
+    - --param-22
+    - inputValue: SamplingColumns
+    - --param-23
+    - inputValue: Seed
+    - --param-24
+    - inputValue: OrderByClause
+    - --param-25
+    - inputValue: Category
+    - --param-26
+    - inputValue: ProjectName
+    - --param-27
+    - inputValue: KeepRooms
+    - --param-28
+    - inputValue: RunDate
+    - --param-29
+    - inputValue: DefaultDataLakeAccount
+    - --param-30
+    - inputValue: RunAs
+    - --param-31
+    - inputValue: Tenant
+    - --param-32
+    - inputValue: Priority
+    - --param-33
+    - inputValue: DegreesOfParallelism
+    - --param-34
+    - inputValue: RuntimeVersion
+    - --param-35
+    - inputValue: AnalyticsAccountName

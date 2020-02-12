@@ -1,0 +1,165 @@
+name: 4cba961e-5115-4cdd-868b-2910b2e8af40
+id: 4cba961e-5115-4cdd-868b-2910b2e8af40
+category: Office
+version: 0.0.1.3
+inputs:
+- name: train_data
+  type: &id001
+  - AzureEncryptedBlobReference
+  - AzureEncryptedBlobFileReference
+  - AzureBlobPath
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference,AzureBlobPath
+  port: true
+  optional: true
+- name: test_data
+  type:
+  - AzureEncryptedBlobReference
+  - AzureEncryptedBlobFileReference
+  - AzureBlobPath
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference,AzureBlobPath
+  port: true
+  optional: true
+- name: Mode
+  optional: true
+  type: String
+  default: train
+- name: DataColumns
+  optional: true
+  type: String
+- name: TestColumns
+  optional: true
+  type: String
+- name: TrainingFeatures
+  optional: true
+  type: String
+- name: Data files have headers
+  optional: true
+  type: String
+  default: 'false'
+- name: Test files have headers
+  optional: true
+  type: String
+  default: 'false'
+- name: ValidationSplit
+  optional: true
+  type: String
+  default: '0.1'
+- name: GroupColumn
+  optional: true
+  type: String
+  default: GroupId
+- name: LabelColumn
+  optional: true
+  type: String
+  default: E_Label
+- name: Score column suffix
+  optional: true
+  type: String
+- name: Trainer
+  optional: true
+  type: String
+  default: LightGBMBinary
+- name: Trainer Options
+  optional: true
+  type: String
+  default: pruning=+ prtol=+
+- name: Maximum input lines to consider
+  optional: true
+  type: Int
+  default: '30000000'
+- name: Seeds
+  optional: true
+  type: String
+  default: 555,666,777,888,999
+- name: MedianMetric
+  optional: true
+  type: String
+  default: F1 Score
+- name: Show clone metrics
+  optional: true
+  type: String
+  default: 'false'
+- name: Output scored file as json lines
+  optional: true
+  type: String
+  default: 'true'
+- name: Extra maml args
+  optional: true
+  type: String
+outputs:
+- name: median_model
+  type: *id001
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference,AzureBlobPath
+  port: true
+  optional: true
+- name: scored_test
+  type: *id001
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference,AzureBlobPath
+  port: true
+  optional: true
+- name: all_models
+  type: *id001
+  description: AzureEncryptedBlobReference,AzureEncryptedBlobFileReference,AzureBlobPath
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: train_data
+    - --input-1
+    - inputPath: test_data
+    - --output-0
+    - outputPath: median_model
+    - --output-1
+    - outputPath: scored_test
+    - --output-2
+    - outputPath: all_models
+    - --param-0
+    - inputValue: Mode
+    - --param-1
+    - inputValue: DataColumns
+    - --param-2
+    - inputValue: TestColumns
+    - --param-3
+    - inputValue: TrainingFeatures
+    - --param-4
+    - inputValue: Data files have headers
+    - --param-5
+    - inputValue: Test files have headers
+    - --param-6
+    - inputValue: ValidationSplit
+    - --param-7
+    - inputValue: GroupColumn
+    - --param-8
+    - inputValue: LabelColumn
+    - --param-9
+    - inputValue: Score column suffix
+    - --param-10
+    - inputValue: Trainer
+    - --param-11
+    - inputValue: Trainer Options
+    - --param-12
+    - inputValue: Maximum input lines to consider
+    - --param-13
+    - inputValue: Seeds
+    - --param-14
+    - inputValue: MedianMetric
+    - --param-15
+    - inputValue: Show clone metrics
+    - --param-16
+    - inputValue: Output scored file as json lines
+    - --param-17
+    - inputValue: Extra maml args

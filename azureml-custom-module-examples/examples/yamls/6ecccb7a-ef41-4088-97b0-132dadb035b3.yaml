@@ -1,0 +1,121 @@
+name: 6ecccb7a-ef41-4088-97b0-132dadb035b3
+id: 6ecccb7a-ef41-4088-97b0-132dadb035b3
+category: Office
+version: 0.0.1.3
+inputs:
+- name: Training Data
+  type:
+  - ExtractionTSV
+  - GenericTSV
+  description: ExtractionTSV,GenericTSV
+  port: true
+  optional: true
+- name: InputModel
+  type:
+  - GenericBinary
+  description: GenericBinary
+  port: true
+  optional: true
+- name: Number of Folds
+  optional: true
+  type: Int
+  default: '2'
+- name: Predictor
+  optional: true
+  type: String
+  default: FastTreeBinaryClassification
+- name: Loader Config
+  optional: true
+  type: String
+  default: TextLoader
+- name: Transforms
+  optional: true
+  type: String
+- name: Cache Examples in Memory
+  optional: true
+  type: String
+  default: +
+- name: Use Threads
+  optional: true
+  type: String
+  default: +
+- name: Output Per Example Fold Index
+  optional: true
+  type: String
+  default: '-'
+- name: Evaluator Class
+  optional: true
+  type: String
+- name: Scorer Class
+  optional: true
+  type: String
+- name: Random seed
+  optional: true
+  type: Int
+  default: '1'
+- name: Stratification Column
+  optional: true
+  type: String
+- name: Extra Arguments
+  optional: true
+  type: String
+outputs:
+- name: Trained Model Summary
+  type:
+  - GenericText
+  description: GenericText
+  port: true
+  optional: true
+- name: Per-Instance Predictions
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: Training Data
+    - --input-1
+    - inputPath: InputModel
+    - --output-0
+    - outputPath: Trained Model Summary
+    - --output-1
+    - outputPath: Per-Instance Predictions
+    - --param-0
+    - inputValue: Number of Folds
+    - --param-1
+    - inputValue: Predictor
+    - --param-2
+    - inputValue: Loader Config
+    - --param-3
+    - inputValue: Transforms
+    - --param-4
+    - inputValue: Cache Examples in Memory
+    - --param-5
+    - inputValue: Use Threads
+    - --param-6
+    - inputValue: Output Per Example Fold Index
+    - --param-7
+    - inputValue: Evaluator Class
+    - --param-8
+    - inputValue: Scorer Class
+    - --param-9
+    - inputValue: Random seed
+    - --param-10
+    - inputValue: Stratification Column
+    - --param-11
+    - inputValue: Extra Arguments

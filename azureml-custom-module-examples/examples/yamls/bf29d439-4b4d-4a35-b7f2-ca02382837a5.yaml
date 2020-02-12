@@ -1,0 +1,43 @@
+name: bf29d439-4b4d-4a35-b7f2-ca02382837a5
+id: bf29d439-4b4d-4a35-b7f2-ca02382837a5
+category: Office
+version: 0.0.1.3
+inputs:
+- name: input_dir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: delimiter
+  optional: true
+  type: String
+  default: TAB
+outputs:
+- name: outputstatsdir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: input_dir
+    - --output-0
+    - outputPath: outputstatsdir
+    - --param-0
+    - inputValue: delimiter

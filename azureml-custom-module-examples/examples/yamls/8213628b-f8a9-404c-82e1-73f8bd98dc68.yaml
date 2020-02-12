@@ -1,0 +1,127 @@
+name: 8213628b-f8a9-404c-82e1-73f8bd98dc68
+id: 8213628b-f8a9-404c-82e1-73f8bd98dc68
+category: Office
+version: 0.0.1.3
+inputs:
+- name: InputDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: num_of_output_files
+  optional: true
+  type: Int
+  default: '5'
+- name: output_file_prefix
+  optional: true
+  type: String
+  default: queries
+- name: print_every_k_instances
+  optional: true
+  type: Int
+  default: '10000'
+outputs:
+- name: OutputDir0
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir1
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir2
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir3
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir4
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir5
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir6
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir7
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir8
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputDir9
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: InputDir
+    - --output-0
+    - outputPath: OutputDir0
+    - --output-1
+    - outputPath: OutputDir1
+    - --output-2
+    - outputPath: OutputDir2
+    - --output-3
+    - outputPath: OutputDir3
+    - --output-4
+    - outputPath: OutputDir4
+    - --output-5
+    - outputPath: OutputDir5
+    - --output-6
+    - outputPath: OutputDir6
+    - --output-7
+    - outputPath: OutputDir7
+    - --output-8
+    - outputPath: OutputDir8
+    - --output-9
+    - outputPath: OutputDir9
+    - --param-0
+    - inputValue: num_of_output_files
+    - --param-1
+    - inputValue: output_file_prefix
+    - --param-2
+    - inputValue: print_every_k_instances

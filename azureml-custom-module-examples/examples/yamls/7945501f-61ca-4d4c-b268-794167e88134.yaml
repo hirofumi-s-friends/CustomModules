@@ -1,0 +1,203 @@
+name: 7945501f-61ca-4d4c-b268-794167e88134
+id: 7945501f-61ca-4d4c-b268-794167e88134
+category: Office
+version: 0.0.1.3
+inputs:
+- name: InputTFModelDirectory
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: InputClassifierModelDirectory
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: InputRankerModelDirectory
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: InputBlingModelDirectory
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: FiltersFolder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: InputMLGToolsFolder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: InputTrieToolsFolder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: ModelType
+  optional: true
+  type: String
+  default: PYTORCHMATCHING
+- name: OutputSize
+  optional: true
+  type: Int
+  default: '3'
+- name: ModelVersionString
+  optional: true
+  type: String
+  default: MVExp
+- name: IncludeFeaturization
+  optional: true
+  type: String
+  default: 'False'
+- name: language_codes
+  optional: true
+  type: String
+  default: en-*
+- name: VocabShift
+  optional: true
+  type: Int
+  default: '-2'
+- name: TopK
+  optional: true
+  type: Int
+  default: '15'
+- name: MaxTokens
+  optional: true
+  type: Int
+  default: '15'
+- name: MinTokens
+  optional: true
+  type: Int
+  default: '4'
+- name: TriggerThreshold
+  optional: true
+  type: String
+  default: '0.0'
+- name: maxsent
+  optional: true
+  type: Int
+  default: '10'
+- name: usehighlights
+  optional: true
+  type: String
+  default: 'False'
+- name: classifier_outputs_include_matching_scores
+  optional: true
+  type: String
+  default: 'True'
+- name: addRanker
+  optional: true
+  type: String
+  default: 'False'
+- name: in_cluster
+  optional: true
+  type: String
+  default: 'False'
+- name: personalization_counterfactual
+  optional: true
+  type: String
+  default: 'False'
+- name: msgencsize
+  optional: true
+  type: Int
+  default: '0'
+outputs:
+- name: OutputQASModelDirectory
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputMLGFilesFolder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputTrieFilesFolder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: InputTFModelDirectory
+    - --input-1
+    - inputPath: InputClassifierModelDirectory
+    - --input-2
+    - inputPath: InputRankerModelDirectory
+    - --input-3
+    - inputPath: InputBlingModelDirectory
+    - --input-4
+    - inputPath: FiltersFolder
+    - --input-5
+    - inputPath: InputMLGToolsFolder
+    - --input-6
+    - inputPath: InputTrieToolsFolder
+    - --output-0
+    - outputPath: OutputQASModelDirectory
+    - --output-1
+    - outputPath: OutputMLGFilesFolder
+    - --output-2
+    - outputPath: OutputTrieFilesFolder
+    - --param-0
+    - inputValue: ModelType
+    - --param-1
+    - inputValue: OutputSize
+    - --param-2
+    - inputValue: ModelVersionString
+    - --param-3
+    - inputValue: IncludeFeaturization
+    - --param-4
+    - inputValue: language_codes
+    - --param-5
+    - inputValue: VocabShift
+    - --param-6
+    - inputValue: TopK
+    - --param-7
+    - inputValue: MaxTokens
+    - --param-8
+    - inputValue: MinTokens
+    - --param-9
+    - inputValue: TriggerThreshold
+    - --param-10
+    - inputValue: maxsent
+    - --param-11
+    - inputValue: usehighlights
+    - --param-12
+    - inputValue: classifier_outputs_include_matching_scores
+    - --param-13
+    - inputValue: addRanker
+    - --param-14
+    - inputValue: in_cluster
+    - --param-15
+    - inputValue: personalization_counterfactual
+    - --param-16
+    - inputValue: msgencsize

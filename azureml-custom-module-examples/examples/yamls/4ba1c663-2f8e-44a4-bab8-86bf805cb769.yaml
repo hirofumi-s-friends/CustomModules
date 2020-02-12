@@ -1,0 +1,97 @@
+name: 4ba1c663-2f8e-44a4-bab8-86bf805cb769
+id: 4ba1c663-2f8e-44a4-bab8-86bf805cb769
+category: Office
+version: 0.0.1.3
+inputs:
+- name: UHRS_Output
+  type:
+  - AnyFile
+  description: AnyFile
+  port: true
+  optional: true
+- name: TEE_Output
+  type:
+  - AnyFile
+  description: AnyFile
+  port: true
+  optional: true
+- name: Input_Documents
+  type:
+  - AnyFile
+  description: AnyFile
+  port: true
+  optional: true
+- name: removed_documents
+  type:
+  - AnyFile
+  description: AnyFile
+  port: true
+  optional: true
+- name: agreement_threshold
+  optional: true
+  type: String
+  default: '0'
+- name: minimum_judges
+  optional: true
+  type: Int
+  default: '1'
+outputs:
+- name: AllMetrics
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: SummarizableSetMetrics
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: perDocCounts
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: result_reference
+  type:
+  - AnyFile
+  description: AnyFile
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: UHRS_Output
+    - --input-1
+    - inputPath: TEE_Output
+    - --input-2
+    - inputPath: Input_Documents
+    - --input-3
+    - inputPath: removed_documents
+    - --output-0
+    - outputPath: AllMetrics
+    - --output-1
+    - outputPath: SummarizableSetMetrics
+    - --output-2
+    - outputPath: perDocCounts
+    - --output-3
+    - outputPath: result_reference
+    - --param-0
+    - inputValue: agreement_threshold
+    - --param-1
+    - inputValue: minimum_judges

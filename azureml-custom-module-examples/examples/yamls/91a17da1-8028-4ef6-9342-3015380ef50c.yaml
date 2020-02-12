@@ -1,0 +1,44 @@
+name: 91a17da1-8028-4ef6-9342-3015380ef50c
+id: 91a17da1-8028-4ef6-9342-3015380ef50c
+category: Office
+version: 0.0.1.3
+inputs:
+- name: VC
+  optional: true
+  type: String
+- name: RelativePath
+  optional: true
+  type: String
+- name: Dummy
+  optional: true
+  type: String
+outputs:
+- name: DestinationPath
+  type:
+  - CosmosPath
+  description: CosmosPath
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --output-0
+    - outputPath: DestinationPath
+    - --param-0
+    - inputValue: VC
+    - --param-1
+    - inputValue: RelativePath
+    - --param-2
+    - inputValue: Dummy

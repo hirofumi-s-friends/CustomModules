@@ -1,0 +1,43 @@
+name: 94662665-8a6d-4064-9832-4db3e638a605
+id: 94662665-8a6d-4064-9832-4db3e638a605
+category: Office
+version: 0.0.1.3
+inputs:
+- name: CosmosPath
+  type:
+  - CosmosPath
+  description: CosmosPath
+  port: true
+  optional: true
+- name: ShouldRespectLineBoundaries
+  optional: true
+  type: String
+  default: 'false'
+outputs:
+- name: GenericTsvDirecotry
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: CosmosPath
+    - --output-0
+    - outputPath: GenericTsvDirecotry
+    - --param-0
+    - inputValue: ShouldRespectLineBoundaries

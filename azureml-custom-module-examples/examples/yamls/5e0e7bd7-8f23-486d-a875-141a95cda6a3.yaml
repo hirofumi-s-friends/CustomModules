@@ -1,0 +1,188 @@
+name: 5e0e7bd7-8f23-486d-a875-141a95cda6a3
+id: 5e0e7bd7-8f23-486d-a875-141a95cda6a3
+category: Office
+version: 0.0.1.3
+inputs:
+- name: httpqas_binaries_dir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: data_dir1
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: data_dir2
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: data_dir3
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: data_dir4
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: data_dir5
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: InputQueriesDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: datasets space separated
+  optional: true
+  type: String
+- name: column
+  optional: true
+  type: String
+  default: '0'
+- name: environment
+  optional: true
+  type: String
+  default: Aether-Validate-Griffinprod
+- name: virtualservice
+  optional: true
+  type: String
+- name: param_staruptime
+  optional: true
+  type: Int
+  default: '600'
+- name: testQuery
+  optional: true
+  type: String
+  default: test
+- name: query_index
+  optional: true
+  type: Int
+  default: '0'
+- name: max_tee_charcount
+  optional: true
+  type: Int
+  default: '300'
+- name: virtualconstraints
+  optional: true
+  type: String
+  default: outlooksmartreply:prod
+- name: featuresets_to_extract
+  optional: true
+  type: String
+  default: correct_indices
+- name: featureset_index
+  optional: true
+  type: Int
+  default: '-1'
+- name: send_featureset
+  optional: true
+  type: Int
+  default: '0'
+- name: block_size
+  optional: true
+  type: String
+  default: 0.25MB
+- name: num_threads
+  optional: true
+  type: Int
+  default: '-1'
+- name: domains to check space separated
+  optional: true
+  type: String
+outputs:
+- name: output.zip
+  type:
+  - AzureEncryptedBlobFileReference
+  description: AzureEncryptedBlobFileReference
+  port: true
+  optional: true
+- name: serviceResponse
+  type:
+  - AzureEncryptedBlobFileReference
+  description: AzureEncryptedBlobFileReference
+  port: true
+  optional: true
+- name: OutputAnalysisDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: httpqas_binaries_dir
+    - --input-1
+    - inputPath: data_dir1
+    - --input-2
+    - inputPath: data_dir2
+    - --input-3
+    - inputPath: data_dir3
+    - --input-4
+    - inputPath: data_dir4
+    - --input-5
+    - inputPath: data_dir5
+    - --input-6
+    - inputPath: InputQueriesDir
+    - --output-0
+    - outputPath: output.zip
+    - --output-1
+    - outputPath: serviceResponse
+    - --output-2
+    - outputPath: OutputAnalysisDir
+    - --param-0
+    - inputValue: datasets space separated
+    - --param-1
+    - inputValue: column
+    - --param-2
+    - inputValue: environment
+    - --param-3
+    - inputValue: virtualservice
+    - --param-4
+    - inputValue: param_staruptime
+    - --param-5
+    - inputValue: testQuery
+    - --param-6
+    - inputValue: query_index
+    - --param-7
+    - inputValue: max_tee_charcount
+    - --param-8
+    - inputValue: virtualconstraints
+    - --param-9
+    - inputValue: featuresets_to_extract
+    - --param-10
+    - inputValue: featureset_index
+    - --param-11
+    - inputValue: send_featureset
+    - --param-12
+    - inputValue: block_size
+    - --param-13
+    - inputValue: num_threads
+    - --param-14
+    - inputValue: domains to check space separated

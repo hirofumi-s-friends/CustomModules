@@ -1,0 +1,206 @@
+name: 242cbba0-2210-482e-90bb-a9d62d017e10
+id: 242cbba0-2210-482e-90bb-a9d62d017e10
+category: Office
+version: 0.0.1.3
+inputs:
+- name: Category
+  optional: true
+  type: String
+  default: MSIT
+- name: ProjectName
+  optional: true
+  type: String
+  default: RECOMMENDATIONS
+- name: ExtractionPathEmail
+  optional: true
+  type: String
+- name: ExtractionPathCalendar
+  optional: true
+  type: String
+- name: EmailStartDate
+  optional: true
+  type: String
+  default: '2017-01-01'
+- name: EmailEndDate
+  optional: true
+  type: String
+  default: '2019-01-01'
+- name: CalendarStartDate
+  optional: true
+  type: String
+  default: '2017-01-01'
+- name: CalendarEndDate
+  optional: true
+  type: String
+  default: '2019-01-01'
+- name: OutputColumns
+  optional: true
+  type: String
+  default: GroupId, C_Id, C_Uid, C_ConversationIndex, C_CreatedDateTime, C_ResponseStatus,
+    C_IsReminderOn, C_HasAttachments, C_Subject, C_Body, C_RawBody, C_Start, C_End,
+    C_Location, C_IsAllDay, C_IsCancelled, C_IsOrganizer, C_Recurrence, C_IsResponseRequested,
+    C_SeriesMasterId, C_Attendees, C_Organizer, C_Attachments, C_ShowAs, C_Type, C_UserId,
+    E_Id, E_InternetMessageId, E_ReceivedDateTime, E_Subject, E_From, E_ToRecipients,
+    E_CcRecipients, E_BccRecipients, E_ConversationId, E_ConversationIndex, E_UniqueBody,
+    E_RawUniqueBody, E_HasAttachments, E_Importance, E_IsRead, E_IsDraft, E_IsFocussed,
+    E_IsFlagged, E_Attachments, E_UserEmailAddress, E_UserId, E_HoursBeforeStart,
+    E_RecipientsAttendeesIntersection, E_IsM2H, E_Label, E_IsImportantByIRanker, E_TermFrequencies
+- name: LabelColumn
+  optional: true
+  type: String
+  default: E_Label
+- name: DefaultLabel
+  optional: true
+  type: String
+  default: '1'
+- name: RemoveMeetingFollowUps
+  optional: true
+  type: String
+  default: 'false'
+- name: FilterClause
+  optional: true
+  type: String
+  default: // WHERE true
+- name: GroupIdColumns
+  optional: true
+  type: String
+  default: C_UserId, C_Id
+- name: GroupIdColumnName
+  optional: true
+  type: String
+  default: GroupId
+- name: EmailSelectionWindow
+  optional: true
+  type: String
+  default: PARTITION BY E_UserId, E_ConversationId ORDER BY E_AbsCreationDeltaInHours
+    DESC
+- name: OrderBy
+  optional: true
+  type: String
+  default: ORDER BY C_Start, C_Id
+- name: KeepRooms
+  optional: true
+  type: String
+  default: 'false'
+- name: RunDate
+  optional: true
+  type: String
+- name: AnalyticsAccountName
+  optional: true
+  type: String
+  default: o365ccmarscommonnam
+- name: DefaultDataLakeAccount
+  optional: true
+  type: String
+  default: o365ccmarscommonnam
+- name: RunAs
+  optional: true
+  type: String
+  default: b16e6a39-e4c0-47d3-a515-feb8d1d593f4
+- name: Tenant
+  optional: true
+  type: String
+  default: prdtrs01.prod.outlook.com
+- name: Priority
+  optional: true
+  type: Int
+  default: '1000'
+- name: DegreesOfParallelism
+  optional: true
+  type: Int
+  default: '100'
+- name: RuntimeVersion
+  optional: true
+  type: String
+outputs:
+- name: dataOutput
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: OutputSchema
+  type:
+  - AzureBlobPath
+  description: AzureBlobPath
+  port: true
+  optional: true
+- name: statsOutput
+  type:
+  - AzureBlobPath
+  description: AzureBlobPath
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --output-0
+    - outputPath: dataOutput
+    - --output-1
+    - outputPath: OutputSchema
+    - --output-2
+    - outputPath: statsOutput
+    - --param-0
+    - inputValue: Category
+    - --param-1
+    - inputValue: ProjectName
+    - --param-2
+    - inputValue: ExtractionPathEmail
+    - --param-3
+    - inputValue: ExtractionPathCalendar
+    - --param-4
+    - inputValue: EmailStartDate
+    - --param-5
+    - inputValue: EmailEndDate
+    - --param-6
+    - inputValue: CalendarStartDate
+    - --param-7
+    - inputValue: CalendarEndDate
+    - --param-8
+    - inputValue: OutputColumns
+    - --param-9
+    - inputValue: LabelColumn
+    - --param-10
+    - inputValue: DefaultLabel
+    - --param-11
+    - inputValue: RemoveMeetingFollowUps
+    - --param-12
+    - inputValue: FilterClause
+    - --param-13
+    - inputValue: GroupIdColumns
+    - --param-14
+    - inputValue: GroupIdColumnName
+    - --param-15
+    - inputValue: EmailSelectionWindow
+    - --param-16
+    - inputValue: OrderBy
+    - --param-17
+    - inputValue: KeepRooms
+    - --param-18
+    - inputValue: RunDate
+    - --param-19
+    - inputValue: AnalyticsAccountName
+    - --param-20
+    - inputValue: DefaultDataLakeAccount
+    - --param-21
+    - inputValue: RunAs
+    - --param-22
+    - inputValue: Tenant
+    - --param-23
+    - inputValue: Priority
+    - --param-24
+    - inputValue: DegreesOfParallelism
+    - --param-25
+    - inputValue: RuntimeVersion

@@ -1,0 +1,45 @@
+name: 048a063d-eefc-42d0-9bca-1809e1a892dd
+id: 048a063d-eefc-42d0-9bca-1809e1a892dd
+category: Office
+version: 0.0.1.3
+inputs:
+- name: InputFile1
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+- name: InputFile2
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+outputs:
+- name: OutputFile
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: InputFile1
+    - --input-1
+    - inputPath: InputFile2
+    - --output-0
+    - outputPath: OutputFile

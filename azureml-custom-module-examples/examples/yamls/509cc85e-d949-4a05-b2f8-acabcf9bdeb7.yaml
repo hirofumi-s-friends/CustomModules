@@ -1,0 +1,62 @@
+name: 509cc85e-d949-4a05-b2f8-acabcf9bdeb7
+id: 509cc85e-d949-4a05-b2f8-acabcf9bdeb7
+category: Office
+version: 0.0.1.3
+inputs:
+- name: input
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: filetype
+  optional: true
+  type: String
+- name: dev_ratio
+  optional: true
+  type: String
+  default: '0.2'
+- name: num_column
+  optional: true
+  type: Int
+  default: '0'
+outputs:
+- name: outputTrain
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: outputDev
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: input
+    - --output-0
+    - outputPath: outputTrain
+    - --output-1
+    - outputPath: outputDev
+    - --param-0
+    - inputValue: filetype
+    - --param-1
+    - inputValue: dev_ratio
+    - --param-2
+    - inputValue: num_column

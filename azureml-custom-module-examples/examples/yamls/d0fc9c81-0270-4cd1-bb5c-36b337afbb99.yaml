@@ -1,0 +1,43 @@
+name: d0fc9c81-0270-4cd1-bb5c-36b337afbb99
+id: d0fc9c81-0270-4cd1-bb5c-36b337afbb99
+category: Office
+version: 0.0.1.3
+inputs:
+- name: TSV_Folder
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+- name: csv_indices
+  optional: true
+  type: String
+  default: '"0,2,1"'
+outputs:
+- name: TSV_Folder Out
+  type:
+  - Directory_Of_GenericTSV
+  description: Directory_Of_GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: TSV_Folder
+    - --output-0
+    - outputPath: TSV_Folder Out
+    - --param-0
+    - inputValue: csv_indices

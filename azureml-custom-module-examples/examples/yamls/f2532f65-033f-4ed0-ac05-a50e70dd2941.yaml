@@ -1,0 +1,154 @@
+name: f2532f65-033f-4ed0-ac05-a50e70dd2941
+id: f2532f65-033f-4ed0-ac05-a50e70dd2941
+category: Office
+version: 0.0.1.3
+inputs:
+- name: data_dir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: bert_model
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: SubscriptionId
+  optional: true
+  type: String
+  default: 98d476c6-c75b-481c-8c18-f53d91f614b0
+- name: ResourceGroupName
+  optional: true
+  type: String
+  default: Phase2Prod
+- name: WorkspaceName
+  optional: true
+  type: String
+  default: Matrix
+- name: Region
+  optional: true
+  type: String
+  default: southcentralus
+- name: AmlExperimentName
+  optional: true
+  type: String
+- name: Script
+  optional: true
+  type: String
+  default: coconut/main/finetune_bert_classifier.py
+- name: Framework
+  optional: true
+  type: String
+  default: Python
+- name: Target
+  optional: true
+  type: String
+  default: ELR-LowPriSC
+- name: BaseDockerImage
+  optional: true
+  type: String
+  default: mcr.microsoft.com/azureml/bert:pretrain-openmpi3.1.2-cuda10.0-cudnn7-ubuntu16.04
+- name: SourceDirectoryDataStore
+  optional: true
+  type: String
+  default: workspaceblobstore
+- name: GpuSupport
+  optional: true
+  type: String
+  default: 'true'
+- name: UserManagedDependencies
+  optional: true
+  type: String
+  default: 'true'
+- name: CreateDataStoreIfNotExist
+  optional: true
+  type: String
+  default: 'true'
+- name: NodeCount
+  optional: true
+  type: String
+- name: Communicator
+  optional: true
+  type: String
+- name: MpiProcessCountPerNode
+  optional: true
+  type: String
+- name: Arguments
+  optional: true
+  type: String
+- name: InterpreterPath
+  optional: true
+  type: String
+  default: /opt/miniconda/envs/amlbert/bin/python
+- name: numeric_feature_columns
+  optional: true
+  type: String
+  default: none
+outputs:
+- name: output_dir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: data_dir
+    - --input-1
+    - inputPath: bert_model
+    - --output-0
+    - outputPath: output_dir
+    - --param-0
+    - inputValue: SubscriptionId
+    - --param-1
+    - inputValue: ResourceGroupName
+    - --param-2
+    - inputValue: WorkspaceName
+    - --param-3
+    - inputValue: Region
+    - --param-4
+    - inputValue: AmlExperimentName
+    - --param-5
+    - inputValue: Script
+    - --param-6
+    - inputValue: Framework
+    - --param-7
+    - inputValue: Target
+    - --param-8
+    - inputValue: BaseDockerImage
+    - --param-9
+    - inputValue: SourceDirectoryDataStore
+    - --param-10
+    - inputValue: GpuSupport
+    - --param-11
+    - inputValue: UserManagedDependencies
+    - --param-12
+    - inputValue: CreateDataStoreIfNotExist
+    - --param-13
+    - inputValue: NodeCount
+    - --param-14
+    - inputValue: Communicator
+    - --param-15
+    - inputValue: MpiProcessCountPerNode
+    - --param-16
+    - inputValue: Arguments
+    - --param-17
+    - inputValue: InterpreterPath
+    - --param-18
+    - inputValue: numeric_feature_columns

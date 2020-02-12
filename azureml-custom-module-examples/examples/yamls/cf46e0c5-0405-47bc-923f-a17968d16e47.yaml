@@ -1,0 +1,51 @@
+name: cf46e0c5-0405-47bc-923f-a17968d16e47
+id: cf46e0c5-0405-47bc-923f-a17968d16e47
+category: Office
+version: 0.0.1.3
+inputs:
+- name: input_file_name
+  type:
+  - AnyFile
+  description: AnyFile
+  port: true
+  optional: true
+- name: SUMMARIZABILITY_THRESHOLD
+  optional: true
+  type: Int
+  default: '3'
+outputs:
+- name: summary_df_output_path
+  type:
+  - AnyDirectory
+  description: AnyDirectory
+  port: true
+  optional: true
+- name: stat_df_output_path
+  type:
+  - AnyDirectory
+  description: AnyDirectory
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: input_file_name
+    - --output-0
+    - outputPath: summary_df_output_path
+    - --output-1
+    - outputPath: stat_df_output_path
+    - --param-0
+    - inputValue: SUMMARIZABILITY_THRESHOLD

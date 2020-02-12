@@ -1,0 +1,101 @@
+name: 6795d821-1d6e-4461-b770-969f0a1084d4
+id: 6795d821-1d6e-4461-b770-969f0a1084d4
+category: Office
+version: 0.0.1.3
+inputs:
+- name: schema
+  type: &id001
+  - GenericTSV
+  - GenericText
+  - TextFile
+  description: GenericTSV,GenericText,TextFile
+  port: true
+  optional: true
+- name: schema1
+  type:
+  - GenericTSV
+  - GenericText
+  - TextFile
+  description: GenericTSV,GenericText,TextFile
+  port: true
+  optional: true
+- name: schema2
+  type:
+  - GenericTSV
+  - GenericText
+  - TextFile
+  description: GenericTSV,GenericText,TextFile
+  port: true
+  optional: true
+- name: schema3
+  type:
+  - GenericTSV
+  - GenericText
+  - TextFile
+  description: GenericTSV,GenericText,TextFile
+  port: true
+  optional: true
+- name: schema4
+  type:
+  - GenericTSV
+  - GenericText
+  - TextFile
+  description: GenericTSV,GenericText,TextFile
+  port: true
+  optional: true
+- name: Additional columns
+  optional: true
+  type: String
+- name: Columns to remove
+  optional: true
+  type: String
+- name: DefaultType
+  optional: true
+  type: String
+  default: string
+outputs:
+- name: mergedColumns
+  type: *id001
+  description: GenericTSV,GenericText,TextFile
+  port: true
+  optional: true
+- name: mergedSchema
+  type: *id001
+  description: GenericTSV,GenericText,TextFile
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: schema
+    - --input-1
+    - inputPath: schema1
+    - --input-2
+    - inputPath: schema2
+    - --input-3
+    - inputPath: schema3
+    - --input-4
+    - inputPath: schema4
+    - --output-0
+    - outputPath: mergedColumns
+    - --output-1
+    - outputPath: mergedSchema
+    - --param-0
+    - inputValue: Additional columns
+    - --param-1
+    - inputValue: Columns to remove
+    - --param-2
+    - inputValue: DefaultType

@@ -1,0 +1,49 @@
+name: e91b5da5-1f4e-4b8c-be9c-400a751cb5d2
+id: e91b5da5-1f4e-4b8c-be9c-400a751cb5d2
+category: Office
+version: 0.0.1.3
+inputs:
+- name: tsv_folder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: msg_idx
+  optional: true
+  type: Int
+  default: '0'
+- name: response_idx
+  optional: true
+  type: Int
+  default: '0'
+outputs:
+- name: TSV_folder
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: tsv_folder
+    - --output-0
+    - outputPath: TSV_folder
+    - --param-0
+    - inputValue: msg_idx
+    - --param-1
+    - inputValue: response_idx

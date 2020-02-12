@@ -1,0 +1,116 @@
+name: 7c404c40-227a-415b-b7d0-e75c9f82fb9d
+id: 7c404c40-227a-415b-b7d0-e75c9f82fb9d
+category: Office
+version: 0.0.1.3
+inputs:
+- name: InputDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: ResponseLMDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: index_filename
+  optional: true
+  type: String
+  default: response_indices.tsv
+- name: model_responses_column
+  optional: true
+  type: Int
+  default: '0'
+- name: response_lm_file_name
+  optional: true
+  type: String
+  default: response_cluster_lm.txt
+- name: --print_every_k_instances
+  optional: true
+  type: Int
+  default: '1000000'
+- name: --topk_for_rouge
+  optional: true
+  type: Int
+  default: '3'
+- name: golden_raw_response_column
+  optional: true
+  type: Int
+- name: use_model_predictions_as_text
+  optional: true
+  type: String
+  default: 'False'
+- name: signal_column
+  optional: true
+  type: Int
+  default: '-1'
+- name: max_golden_resp_length_to_filter
+  optional: true
+  type: Int
+  default: '37'
+- name: max_golden_resp_length_to_trim_start
+  optional: true
+  type: Int
+  default: '-1'
+- name: stemming
+  optional: true
+  type: String
+  default: 'False'
+- name: lemmatization
+  optional: true
+  type: String
+  default: 'False'
+outputs:
+- name: OutputDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: InputDir
+    - --input-1
+    - inputPath: ResponseLMDir
+    - --output-0
+    - outputPath: OutputDir
+    - --param-0
+    - inputValue: index_filename
+    - --param-1
+    - inputValue: model_responses_column
+    - --param-2
+    - inputValue: response_lm_file_name
+    - --param-3
+    - inputValue: --print_every_k_instances
+    - --param-4
+    - inputValue: --topk_for_rouge
+    - --param-5
+    - inputValue: golden_raw_response_column
+    - --param-6
+    - inputValue: use_model_predictions_as_text
+    - --param-7
+    - inputValue: signal_column
+    - --param-8
+    - inputValue: max_golden_resp_length_to_filter
+    - --param-9
+    - inputValue: max_golden_resp_length_to_trim_start
+    - --param-10
+    - inputValue: stemming
+    - --param-11
+    - inputValue: lemmatization

@@ -1,0 +1,37 @@
+name: 80e7e2c9-89a6-4daf-a5dc-c12c7f4336fa
+id: 80e7e2c9-89a6-4daf-a5dc-c12c7f4336fa
+category: Office
+version: 0.0.1.3
+inputs:
+- name: InFile
+  type:
+  - AzureBlobPath
+  description: AzureBlobPath
+  port: true
+  optional: true
+outputs:
+- name: Output
+  type:
+  - GenericTSV
+  description: GenericTSV
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: InFile
+    - --output-0
+    - outputPath: Output

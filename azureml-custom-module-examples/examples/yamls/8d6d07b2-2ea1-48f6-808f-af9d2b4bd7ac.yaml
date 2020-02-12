@@ -1,0 +1,54 @@
+name: 8d6d07b2-2ea1-48f6-808f-af9d2b4bd7ac
+id: 8d6d07b2-2ea1-48f6-808f-af9d2b4bd7ac
+category: Office
+version: 0.0.1.3
+inputs:
+- name: Filters
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+- name: ' Whitelist_File'
+  optional: true
+  type: String
+  default: Whitelist.txt
+- name: ModelName
+  optional: true
+  type: String
+- name: Description
+  optional: true
+  type: String
+  default: '""'
+outputs:
+- name: FilterDir
+  type:
+  - AzureEncryptedBlobReference
+  description: AzureEncryptedBlobReference
+  port: true
+  optional: true
+implementation:
+  container:
+    runConfig:
+      baseDockerImage: mcr.microsoft.com/azureml/base:intelmpi2018.3-ubuntu16.04
+      gpuSupport: false
+    conda:
+      name: project_environment
+      channels:
+      - defaults
+      dependencies:
+      - python=3.6.8
+      - pip:
+        - azureml-designer-classic-modules==0.0.110
+    entry: mock_entry.py
+    args:
+    - --input-0
+    - inputPath: Filters
+    - --output-0
+    - outputPath: FilterDir
+    - --param-0
+    - inputValue: ' Whitelist_File'
+    - --param-1
+    - inputValue: ModelName
+    - --param-2
+    - inputValue: Description
