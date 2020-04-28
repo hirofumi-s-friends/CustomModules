@@ -1,0 +1,7 @@
+type: DataFrameDirectory
+visualization:
+- type: Visualization
+  path: _data.visualization
+extension: {}
+format: Parquet
+data: _data.parquet
