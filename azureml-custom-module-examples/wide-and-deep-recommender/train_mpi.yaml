@@ -1,0 +1,155 @@
+moduleIdentifier:
+  moduleName: MPI Train Wide and Deep Recommender
+  moduleVersion: 0.0.1
+  namespace: microsoft.com/azureml/samples
+type: Mpi
+description: Train a recommender based on Wide & Deep model.
+inputs:
+  - name: Training dataset of user-item-rating triples
+    type:
+      - DataFrameDirectory
+      - AnyDirectory
+    description: Ratings of items by users, expressed as triple (User, Item, Rating)
+  - name: Epochs
+    type: Integer
+    default: 15
+    description: Maximum number of epochs to perform while training
+    min: 1
+  - name: Batch size
+    type: Integer
+    default: 64
+    description: Number of consecutive samples to combine in a single batch
+  - name: Wide part optimizer
+    type: Enum
+    default: Adagrad
+    description: Optimizer used to apply gradients to the wide part of the model
+    options:
+      - Adagrad
+      - Adam
+      - Ftrl
+      - RMSProp
+      - SGD
+      - Adadelta
+  - name: Wide optimizer learning rate
+    type: Float
+    default: 0.1
+    description: Size of each step in the learning process for wide part of the model
+    min: 2.220446049250313e-16
+    max: 2.0
+  - name: Crossed feature dimension
+    type: Integer
+    default: 1000
+    description: Crossed feature dimension for wide part model
+    min: 1
+  - name: Deep part optimizer
+    type: Enum
+    default: Adagrad
+    description: Optimizer used to apply gradients to the deep part of the model
+    options:
+      - Adagrad
+      - Adam
+      - Ftrl
+      - RMSProp
+      - SGD
+      - Adadelta
+  - name: Deep optimizer learning rate
+    type: Float
+    default: 0.1
+    description: Size of each step in the learning process for deep part of the model
+    min: 2.220446049250313e-16
+    max: 2.0
+  - name: User embedding dimension
+    type: Integer
+    default: 16
+    description: User embedding dimension for deep part model
+    min: 1
+  - name: Item embedding dimension
+    type: Integer
+    default: 16
+    description: Item embedding dimension for deep part model
+    min: 1
+  - name: Categorical features embedding dimension
+    type: Integer
+    default: 4
+    description: Categorical features embedding dimension for deep part model
+    min: 1
+  - name: Hidden units
+    type: String
+    default: '256,128'
+    description: Hidden units per layer for deep part model
+  - name: Activation function
+    type: Enum
+    default: ReLU
+    description: Activation function applied to each layer in deep part model
+    options:
+      - ReLU
+      - Sigmoid
+      - Tanh
+      - Linear
+      - LeakyReLU
+  - name: Dropout
+    type: Float
+    default: 0.8
+    description: Probability that each element is dropped in deep part model
+    min: 0
+    max: 1.0
+  - name: Batch Normalization
+    type: Boolean
+    default: true
+    description: Whether to use batch normalization after each hidden layer
+outputs:
+  - name: Trained Wide and Deep recommendation model
+    type: ModelDirectory
+    description: Trained Wide and Deep recommendation model
+implementation:
+  container:
+    amlEnvironment:
+      docker:
+        baseImage: mcr.microsoft.com/azureml/base-gpu:openmpi3.1.2-cuda10.0-cudnn7-ubuntu18.04
+      python:
+        condaDependencies:
+          name: project_environment
+          channels:
+            - defaults
+          dependencies:
+            - python=3.6.8
+            - pip:
+                - pyyaml==5.1.2
+                - azureml-designer-internal==0.0.20
+                - azureml-designer-core==0.0.33
+                - tensorflow-gpu==2.0.0
+                - horovod==0.18.1
+    command: [python, entries/train_mpi_entry.py]
+    args:
+      - --training-dataset-of-user-item-rating-triples
+      - inputPath: Training dataset of user-item-rating triples
+      - --epochs
+      - inputValue: Epochs
+      - --batch-size
+      - inputValue: Batch size
+      - --wide-part-optimizer
+      - inputValue: Wide part optimizer
+      - --wide-optimizer-learning-rate
+      - inputValue: Wide optimizer learning rate
+      - --crossed-feature-dimension
+      - inputValue: Crossed feature dimension
+      - --deep-part-optimizer
+      - inputValue: Deep part optimizer
+      - --deep-optimizer-learning-rate
+      - inputValue: Deep optimizer learning rate
+      - --user-embedding-dimension
+      - inputValue: User embedding dimension
+      - --item-embedding-dimension
+      - inputValue: Item embedding dimension
+      - --categorical-features-embedding-dimension
+      - inputValue: Categorical features embedding dimension
+      - --hidden-units
+      - inputValue: Hidden units
+      - --activation-function
+      - inputValue: Activation function
+      - --dropout
+      - inputValue: Dropout
+      - --batch-normalization
+      - inputValue: Batch Normalization
+      - --trained-wide-and-deep-recommendation-model
+      - outputPath: Trained Wide and Deep recommendation model
