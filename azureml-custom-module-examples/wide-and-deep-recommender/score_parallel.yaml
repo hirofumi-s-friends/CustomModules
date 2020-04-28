@@ -1,0 +1,56 @@
+moduleIdentifier:
+  moduleName: Parallel Score Wide and Deep Recommender
+  moduleVersion: 0.0.1
+  namespace: microsoft.com/azureml/samples
+description: Score a dataset using the Wide and Deep recommendation model.
+jobType: parallel
+inputs:
+  - name: Trained Wide and Deep recommendation model
+    type: ModelDirectory
+    description: Trained Wide and Deep recommendation model
+  - name: Dataset to score
+    type: AnyDirectory
+    description: Dataset to score
+  - name: Recommender prediction kind
+    type: Enum
+    default: Rating Prediction
+    description: Specify the type of prediction the recommendation should output
+    options:
+      - Rating Prediction
+outputs:
+  - name: Scored dataset
+    type: DataFrameDirectory
+    description: Scored dataset
+implementation:
+  parallel:
+    amlEnvironment:
+      docker:
+        baseImage: mcr.microsoft.com/azureml/base-gpu:openmpi3.1.2-cuda10.0-cudnn7-ubuntu18.04
+      python:
+        condaDependencies:
+          name: project_environment
+          channels:
+            - defaults
+          dependencies:
+            - psutil
+            - python=3.6.8
+            - pip:
+                - pyyaml==5.1.2
+                - azureml-designer-internal==0.0.20
+                - azureml-designer-core==0.0.33
+                - tensorflow-gpu==2.0.0
+                - horovod==0.18.1
+                - azure-storage-queue~=2.1
+                - azure-storage-common~=2.1
+                - azureml-core~=1.0
+                - azureml-telemetry~=1.0
+                - filelock~=3.0
+                - azureml-dataprep[fuse,pandas]~=1.1
+    inputData: Dataset to score
+    outputData: Scored dataset
+    entry: entries/score_parallel_entry.py
+    args:
+      - --trained-wide-and-deep-recommendation-model
+      - inputPath: Trained Wide and Deep recommendation model
+      - --recommender-prediction-kind
+      - inputValue: Recommender prediction kind

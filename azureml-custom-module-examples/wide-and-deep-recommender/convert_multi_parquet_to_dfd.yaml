@@ -1,0 +1,34 @@
+moduleIdentifier:
+  moduleName: Convert Multi Parquet Files to DataFrameDirectory
+  moduleVersion: 0.0.1
+  namespace: microsoft.com/azureml/samples
+metadata:
+  annotations:
+    tags:
+      - DataTransformation
+inputs:
+- name: Input path
+  type: AnyDirectory
+  description: The directory contains multiple parquet files.
+outputs:
+- name: Output path
+  type: DataFrameDirectory
+  description: The directory contains a dataframe.
+implementation:
+  container:
+    amlEnvironment:
+      python:
+        condaDependencies:
+          channels:
+          - defaults
+          dependencies:
+          - python=3.6.8
+          - pip:
+            - azureml-defaults
+            - azureml-designer-core
+          name: project_environment
+    command: [python, entries/multi_parquet_to_dfd.py]
+    args: [
+      --input, {inputPath: Input path},
+      --output, {outputPath: Output path},
+    ]
