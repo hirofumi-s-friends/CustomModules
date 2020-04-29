@@ -1,0 +1,58 @@
+amlModuleIdentifier:
+  moduleName: Deeplabv3 Score
+  moduleVersion: 0.0.3
+  namespace: microsoft.com/azureml/samples
+metadata:
+  annotations:
+    tags:
+    - Machine Learning\Score
+description: Loads a Deeplabv3 Net for semantic segmentation and inferences it
+inputs:
+- name: Model type
+  type: Mode
+  default: deeplabv3_resnet101
+  description: model_type
+  options:
+  - deeplabv3_resnet101
+  - fcn_resnet101
+- name: Model path
+  type: ModelDirectory
+  description: model_path
+- name: Data path
+  type: DataFrameDirectory
+  description: data_path
+- name: Use CUDA
+  type: Boolean
+  default: false
+  description: use_cuda
+outputs:
+- name: Save path
+  type: DataFrameDirectory
+  description: save_path
+implementation:
+  container:
+    amlEnvironment:
+      docker:
+        baseImage: mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda10.0-cudnn7-ubuntu16.04
+      python:
+        condaDependencies:
+          name: project_environment
+          channels:
+          - defaults
+          dependencies:
+          - python=3.6.3
+          - pip:
+            - azureml-core==1.0.72
+            - azureml-designer-core==0.0.33
+            - opencv-python==4.1.0.25
+            - torch==1.3
+            - torchvision==0.4.1
+            - pillow==6.0.0
+    command: [python, ssdeeplabv3/score.py]
+    args: [
+      --model_type, {inputValue: Model type},
+      --model_path, {inputPath: Model path},
+      --data_path, {inputPath: Data path},
+      --use_cuda, {inputValue: Use CUDA},
+      --save_path, {outputPath: Save path},
+    ]
