@@ -1,6 +1,6 @@
 amlModuleIdentifier:
   moduleName: QA Train
-  moduleVersion: 0.0.1
+  moduleVersion: 0.0.2
   namespace: microsoft.com/azureml/samples
 metadata:
   annotations:
@@ -60,6 +60,8 @@ implementation:
           dependencies:
           - python=3.6.8
           - pip:
+            - azureml-core==1.0.72
+            - azureml-dataprep[fuse,pandas]==1.3.5
             - azureml-designer-core==0.0.33
             - pandas==0.24.1
             - tensorboardX==1.8
