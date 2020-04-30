@@ -1,6 +1,6 @@
 amlModuleIdentifier:
   moduleName: QA Score
-  moduleVersion: 0.0.3
+  moduleVersion: 0.0.4
   namespace: microsoft.com/azureml/samples
 metadata:
   annotations:
@@ -39,7 +39,7 @@ implementation:
             - torchvision==0.4.1
     command: [python, examples/score.py]
     args: [
-      --trained-model, {inputPath: Trained model},
-      --input-file, {inputPath: Predict data},
-      --output-dir, {outputPath: Predict result},
+      --trained_model, {inputPath: Trained model},
+      --input_file, {inputPath: Predict data},
+      --output_dir, {outputPath: Predict result},
     ]
