@@ -1,0 +1,40 @@
+amlModuleIdentifier:
+  moduleName: QA Process
+  moduleVersion: 0.0.1
+  namespace: microsoft.com/azureml/samples
+metadata:
+  annotations:
+    tags:
+    - Machine Learning\Preprocess
+description: Transform dataframe into json file
+inputs:
+- name: Input text
+  type: DataFrameDirectory
+  description: Input text
+outputs:
+- name: Processed data
+  type: AnyDirectory
+  description: Processed data
+implementation:
+  container:
+    amlEnvironment:
+      docker:
+        baseImage: mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda10.0-cudnn7-ubuntu16.04
+      python:
+        condaDependencies:
+          name: project_environment
+          channels:
+          - defaults
+          dependencies:
+          - python=3.6.8
+          - pip:
+            - azureml-designer-core==0.0.33
+            - pandas==0.24.1
+            - pytorch-transformers==1.0.0
+            - torch==1.3
+            - torchvision==0.4.1
+    command: [python, examples/transformer.py]
+    args: [
+      --input_file, {inputPath: Input text},
+      --output_dir, {outputPath: Processed data},
+    ]
