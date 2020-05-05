@@ -1,0 +1,64 @@
+amlModuleIdentifier:
+  moduleName: DDPG Train
+  moduleVersion: 0.0.1
+  namespace: microsoft.com/azureml/samples
+metadata:
+  annotations:
+    tags:
+    - Machine Learning\Train
+description: Creates a DDPG for reinforcement learning and trains it
+inputs:
+- name: Environment name
+  type: Mode
+  default: Pendulum-v0
+  description: environment_name
+  options:
+  - Pendulum-v0
+  - BipedalWalker-v2
+- name: Learning rate
+  type: Float
+  default: 0.001
+  description: learning_rate
+- name: Max episodes
+  type: Int
+  default: 5000
+  description: max_episodes
+- name: Batch size
+  type: Int
+  default: 128
+  description: batch_size
+- name: Gamma
+  type: Float
+  default: 0.99
+  description: gamma
+outputs:
+- name: Save path
+  type: ModelDirectory
+  description: save_path
+implementation:
+  container:
+    amlEnvironment:
+      docker:
+        baseImage: mcr.microsoft.com/azureml/base-gpu:intelmpi2018.3-cuda10.0-cudnn7-ubuntu16.04
+      python:
+        condaDependencies:
+          name: project_environment
+          channels:
+          - defaults
+          dependencies:
+          - python=3.6.3
+          - py-opencv=3.4.2
+          - pip:
+            - fire==0.1.3
+            - gym==0.14.0
+            - torch==1.3
+            - torchvision==0.4.1
+    command: [python, ddpg/train.py]
+    args: [
+      --environment_name, {inputValue: Environment name},
+      --learning_rate, {inputValue: Learning rate},
+      --max_episodes, {inputValue: Max episodes},
+      --batch_size, {inputValue: Batch size},
+      --gamma, {inputValue: Gamma},
+      --save_path, {outputPath: Save path},
+    ]
