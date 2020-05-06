@@ -1,6 +1,6 @@
 amlModuleIdentifier:
   moduleName: Stargan Train
-  moduleVersion: 0.0.1
+  moduleVersion: 0.0.2
   namespace: microsoft.com/azureml/samples
 metadata:
   annotations:
@@ -54,6 +54,9 @@ implementation:
           dependencies:
           - python=3.6.3
           - pip:
+            - azureml-core==1.0.72
+            - azureml-dataprep[fuse,pandas]==1.3.5
+            - azureml-designer-core==0.0.33          
             - torch==1.3
             - torchvision==0.4.1
     command: [python, scripts/main.py]
