@@ -1,4 +1,4 @@
-moduleIdentifier:
+amlModuleIdentifier:
   moduleName: Convert Multi Parquet Files to DataFrameDirectory
   moduleVersion: 0.0.1
   namespace: microsoft.com/azureml/samples
