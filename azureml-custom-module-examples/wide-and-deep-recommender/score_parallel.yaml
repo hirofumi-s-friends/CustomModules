@@ -1,4 +1,4 @@
-moduleIdentifier:
+amlModuleIdentifier:
   moduleName: Parallel Score Wide and Deep Recommender
   moduleVersion: 0.0.1
   namespace: microsoft.com/azureml/samples

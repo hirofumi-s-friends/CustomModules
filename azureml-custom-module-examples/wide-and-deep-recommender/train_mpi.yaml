@@ -1,8 +1,8 @@
-moduleIdentifier:
+amlModuleIdentifier:
   moduleName: MPI Train Wide and Deep Recommender
   moduleVersion: 0.0.1
   namespace: microsoft.com/azureml/samples
-type: Mpi
+jobType: Mpi
 description: Train a recommender based on Wide & Deep model.
 inputs:
   - name: Training dataset of user-item-rating triples
