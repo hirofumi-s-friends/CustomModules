@@ -1,0 +1,60 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: sstreamprocessor2_with_priority_tokens_nebula
+version: 0.0.1
+display_name: SStreamProcessor2 with Priority Tokens Nebula
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  input1:
+    type:
+    - AnyDirectory
+    - AnyFile
+  input2:
+    type:
+    - AnyDirectory
+    - AnyFile
+  preamble:
+    type: String
+    optional: false
+  scopecode:
+    type: String
+    optional: false
+  outputisstructuredstream:
+    type: String
+    optional: false
+  outputspecification:
+    type: String
+    optional: false
+  csharpcode:
+    type: String
+    optional: false
+  jobpriority:
+    type: String
+    optional: false
+  jobtokens:
+    type: String
+    optional: false
+  nebulaarguments:
+    type: String
+    optional: false
+  vc:
+    type: String
+    default: cosmos08/WebDataPlatform
+    optional: true
+outputs:
+  output:
+    type: AnyFile
+command: >-
+  python entry.py --input1 {inputs.input1} --input2 {inputs.input2} --output {outputs.output}
+  --preamble {inputs.preamble} --scopecode {inputs.scopecode} --outputisstructuredstream
+  {inputs.outputisstructuredstream} --outputspecification {inputs.outputspecification}
+  --csharpcode {inputs.csharpcode} --jobpriority {inputs.jobpriority} --jobtokens
+  {inputs.jobtokens} --nebulaarguments {inputs.nebulaarguments} [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

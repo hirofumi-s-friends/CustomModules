@@ -1,0 +1,97 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: xslapper
+version: 0.0.1
+display_name: xSLAPPER
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  start:
+    type: String
+    default: '"2019-05-01"'
+    optional: true
+  end:
+    type: String
+    default: '"2019-05-01"'
+    optional: true
+  dataset:
+    type: String
+    default: '"Bing.com"'
+    optional: true
+  traffic:
+    type: String
+    default: '"Normal"'
+    optional: true
+  select1:
+    type: String
+    default: SELECT ClientId
+    optional: true
+  select2:
+    type: String
+    default: SELECT *
+    optional: true
+  select3:
+    type: String
+    default: SELECT *
+    optional: true
+  select4:
+    type: String
+    default: SELECT *
+    optional: true
+  select5:
+    type: String
+    default: SELECT *
+    optional: true
+  select6:
+    type: String
+    default: SELECT *
+    optional: true
+  select7:
+    type: String
+    default: SELECT *
+    optional: true
+  select8:
+    type: String
+    default: SELECT *
+    optional: true
+  select9:
+    type: String
+    default: SELECT *
+    optional: true
+  select10:
+    type: String
+    default: SELECT *
+    optional: true
+  clustered:
+    type: String
+    default: ClientId
+    optional: true
+  sorted:
+    type: String
+    default: ClientId
+    optional: true
+  vc:
+    type: String
+    default: cosmos09/relevance
+    optional: true
+  scopeparams:
+    type: String
+    optional: true
+outputs:
+  output:
+    type: AnyFile
+command: >-
+  python entry.py --output {outputs.output} [--start {inputs.start}] [--end {inputs.end}]
+  [--dataset {inputs.dataset}] [--traffic {inputs.traffic}] [--select1 {inputs.select1}]
+  [--select2 {inputs.select2}] [--select3 {inputs.select3}] [--select4 {inputs.select4}]
+  [--select5 {inputs.select5}] [--select6 {inputs.select6}] [--select7 {inputs.select7}]
+  [--select8 {inputs.select8}] [--select9 {inputs.select9}] [--select10 {inputs.select10}]
+  [--clustered {inputs.clustered}] [--sorted {inputs.sorted}] [--vc {inputs.vc}] [--scopeparams
+  {inputs.scopeparams}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

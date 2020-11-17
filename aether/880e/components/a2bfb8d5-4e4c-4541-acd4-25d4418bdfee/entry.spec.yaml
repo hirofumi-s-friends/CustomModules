@@ -1,0 +1,32 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: logrank_ml_net_bin_2_code
+version: 0.0.1
+display_name: '[LogRank] ML.Net_ Bin 2 Code'
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  trained_model:
+    type:
+    - AnyDirectory
+    - AnyFile
+outputs:
+  trained_model_text:
+    type: AnyFile
+  trained_model_summary:
+    type: AnyFile
+  trained_model_ini_file:
+    type: AnyFile
+  model_as_cs_code:
+    type: AnyFile
+command: >-
+  python entry.py --trained_model {inputs.trained_model} --trained_model_text {outputs.trained_model_text}
+  --trained_model_summary {outputs.trained_model_summary} --trained_model_ini_file
+  {outputs.trained_model_ini_file} --model_as_cs_code {outputs.model_as_cs_code}
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

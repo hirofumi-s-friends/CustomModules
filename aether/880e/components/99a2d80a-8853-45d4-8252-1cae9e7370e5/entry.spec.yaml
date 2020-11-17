@@ -1,0 +1,32 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: awk
+version: 0.0.1
+display_name: awk
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  script:
+    type:
+    - AnyDirectory
+    - AnyFile
+  inputfilename:
+    type:
+    - AnyDirectory
+    - AnyFile
+  delimiter:
+    type: String
+    optional: false
+outputs:
+  outputfilename:
+    type: AnyFile
+command: >-
+  python entry.py --script {inputs.script} --inputfilename {inputs.inputfilename}
+  --outputfilename {outputs.outputfilename} --delimiter {inputs.delimiter}
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

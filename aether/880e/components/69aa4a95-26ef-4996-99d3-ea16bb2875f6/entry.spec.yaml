@@ -1,0 +1,43 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: get_urlmetadata_and_dscmetadata_from_urlrepo
+version: 0.0.1
+display_name: Get UrlMetadata And DscMetadata From URLRepo
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  input:
+    type:
+    - AnyDirectory
+    - AnyFile
+  jobpriority:
+    type: String
+    optional: false
+  jobtokens:
+    type: String
+    optional: false
+  nebulaarguments:
+    type: String
+    optional: false
+  v2repoversion:
+    type: String
+    default: '"0"'
+    optional: true
+  vc:
+    type: String
+    default: cosmos08/WebDataPlatform
+    optional: true
+outputs:
+  output:
+    type: AnyFile
+command: >-
+  python entry.py --input {inputs.input} --output {outputs.output} --jobpriority {inputs.jobpriority}
+  --jobtokens {inputs.jobtokens} --nebulaarguments {inputs.nebulaarguments} [--v2repoversion
+  {inputs.v2repoversion}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

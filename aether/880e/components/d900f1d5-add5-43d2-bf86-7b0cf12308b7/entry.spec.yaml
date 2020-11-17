@@ -1,0 +1,120 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: scopejoin
+version: 0.0.1
+display_name: ScopeJoin
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  inputa:
+    type:
+    - AnyDirectory
+    - AnyFile
+  inputb:
+    type:
+    - AnyDirectory
+    - AnyFile
+  issstreama:
+    type: String
+    default: 'true'
+    optional: true
+  extracta:
+    type: String
+    default: A:string,B:string
+    optional: true
+  selecta:
+    type: String
+    default: '*'
+    optional: true
+  wherea:
+    type: String
+    default: 'true'
+    optional: true
+  havinga:
+    type: String
+    default: 'true'
+    optional: true
+  issstreamb:
+    type: String
+    default: 'true'
+    optional: true
+  extractb:
+    type: String
+    default: C:string,D:string
+    optional: true
+  selectb:
+    type: String
+    default: '*'
+    optional: true
+  whereb:
+    type: String
+    default: 'true'
+    optional: true
+  havingb:
+    type: String
+    default: 'true'
+    optional: true
+  selectab:
+    type: String
+    default: A,B,C,D
+    optional: true
+  jointype:
+    type: String
+    default: INNER JOIN
+    optional: true
+  onab:
+    type: String
+    default: a.A == b.C
+    optional: true
+  statement1:
+    type: String
+    default: SELECT *
+    optional: true
+  statement2:
+    type: String
+    default: SELECT *
+    optional: true
+  statement3:
+    type: String
+    default: SELECT *
+    optional: true
+  statement4:
+    type: String
+    default: SELECT *
+    optional: true
+  statement5:
+    type: String
+    default: SELECT *
+    optional: true
+  clusterorsorting:
+    type: String
+    default: //  CLUSTERED BY Foo SORTED BY Foo
+    optional: true
+  csharpcode:
+    type: String
+    default: //  Add your c# code here
+    optional: true
+  vc:
+    type: String
+    default: cosmos08/WebDataPlatform
+    optional: true
+outputs:
+  output:
+    type: AnyFile
+command: >-
+  python entry.py --inputa {inputs.inputa} --inputb {inputs.inputb} --output {outputs.output}
+  [--issstreama {inputs.issstreama}] [--extracta {inputs.extracta}] [--selecta {inputs.selecta}]
+  [--wherea {inputs.wherea}] [--havinga {inputs.havinga}] [--issstreamb {inputs.issstreamb}]
+  [--extractb {inputs.extractb}] [--selectb {inputs.selectb}] [--whereb {inputs.whereb}]
+  [--havingb {inputs.havingb}] [--selectab {inputs.selectab}] [--jointype {inputs.jointype}]
+  [--onab {inputs.onab}] [--statement1 {inputs.statement1}] [--statement2 {inputs.statement2}]
+  [--statement3 {inputs.statement3}] [--statement4 {inputs.statement4}] [--statement5
+  {inputs.statement5}] [--clusterorsorting {inputs.clusterorsorting}] [--csharpcode
+  {inputs.csharpcode}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

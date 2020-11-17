@@ -1,0 +1,53 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: staticrank_2x4_with_dynamic_code_load_build_fv_from_binary_metadata
+version: 0.0.1
+display_name: 'StaticRank 2x4 with Dynamic Code Load: Build FV from Binary Metadata'
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  param_input_stream:
+    type:
+    - AnyDirectory
+    - AnyFile
+  classifiercode:
+    type:
+    - AnyDirectory
+    - AnyFile
+  jobpriority:
+    type: String
+    optional: false
+  jobtokens:
+    type: String
+    optional: false
+  nebulaarguments:
+    type: String
+    optional: false
+  cbsmodel_targetversion:
+    type: String
+    default: '2'
+    optional: true
+  expessiontoproducesr2by4score:
+    type: String
+    default: ' _sr2by4Classifier.GetScore &lpar; RawMainlineSR2x4FV &rpar; '
+    optional: true
+  vc:
+    type: String
+    default: cosmos08/WebDataPlatform
+    optional: true
+outputs:
+  param_output_fv:
+    type: AnyFile
+command: >-
+  python entry.py --param_input_stream {inputs.param_input_stream} --classifiercode
+  {inputs.classifiercode} --param_output_fv {outputs.param_output_fv} --jobpriority
+  {inputs.jobpriority} --jobtokens {inputs.jobtokens} --nebulaarguments {inputs.nebulaarguments}
+  [--cbsmodel_targetversion {inputs.cbsmodel_targetversion}] [--expessiontoproducesr2by4score
+  {inputs.expessiontoproducesr2by4score}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

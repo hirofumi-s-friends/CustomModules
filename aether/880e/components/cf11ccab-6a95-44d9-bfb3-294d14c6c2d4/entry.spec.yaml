@@ -1,0 +1,57 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: srx_prepare_domain_host_l1path_features_from_binary_metedata
+version: 0.0.1
+display_name: 'SRx: Prepare Domain Host L1path Features from binary metedata'
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  param_input_stream:
+    type:
+    - AnyDirectory
+    - AnyFile
+  jobpriority:
+    type: String
+    optional: false
+  jobtokens:
+    type: String
+    optional: false
+  nebulaarguments:
+    type: String
+    optional: false
+  param_v2repoversion:
+    type: String
+    default: '"0"'
+    optional: true
+  param_siteinsightversion:
+    type: String
+    default: '"0"'
+    optional: true
+  param_v2lastsensor_datestring:
+    type: String
+    default: '"2009/01/01"'
+    optional: true
+  step:
+    type: String
+    default: '"Step1"'
+    optional: true
+  vc:
+    type: String
+    default: cosmos08/WebDataPlatform
+    optional: true
+outputs:
+  param_output_features:
+    type: AnyFile
+command: >-
+  python entry.py --param_input_stream {inputs.param_input_stream} --param_output_features
+  {outputs.param_output_features} --jobpriority {inputs.jobpriority} --jobtokens {inputs.jobtokens}
+  --nebulaarguments {inputs.nebulaarguments} [--param_v2repoversion {inputs.param_v2repoversion}]
+  [--param_siteinsightversion {inputs.param_siteinsightversion}] [--param_v2lastsensor_datestring
+  {inputs.param_v2lastsensor_datestring}] [--step {inputs.step}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

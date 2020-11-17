@@ -1,0 +1,24 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: create_cosmos_path
+version: 0.0.1
+display_name: Create cosmos path
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  vc:
+    type: String
+    default: cosmos08/EntityMatching.Exp
+    optional: true
+outputs:
+  tmppathprefix:
+    type: AnyFile
+command: >-
+  python entry.py --tmppathprefix {outputs.tmppathprefix} [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

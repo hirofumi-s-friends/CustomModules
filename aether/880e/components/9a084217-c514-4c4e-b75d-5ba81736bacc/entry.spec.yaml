@@ -1,0 +1,32 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: copy_intermediate_directory_or_file_to_cosmos
+version: 0.0.1
+display_name: Copy Intermediate Directory or File to Cosmos
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  inputresource:
+    type:
+    - AnyDirectory
+    - AnyFile
+  destinationroot:
+    type: String
+    optional: false
+  shouldrespectlineboundaries:
+    type: String
+    default: 'false'
+    optional: true
+outputs:
+  cosmospath:
+    type: AnyFile
+command: >-
+  python entry.py --inputresource {inputs.inputresource} --cosmospath {outputs.cosmospath}
+  --destinationroot {inputs.destinationroot} [--shouldrespectlineboundaries {inputs.shouldrespectlineboundaries}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

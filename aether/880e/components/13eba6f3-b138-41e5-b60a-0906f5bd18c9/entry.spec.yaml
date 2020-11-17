@@ -1,0 +1,24 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: text_to_generic_tsv
+version: 0.0.1
+display_name: Text to Generic TSV
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  intput:
+    type:
+    - AnyDirectory
+    - AnyFile
+outputs:
+  output:
+    type: AnyFile
+command: >-
+  python entry.py --intput {inputs.intput} --output {outputs.output}
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

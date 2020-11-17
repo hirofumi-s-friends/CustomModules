@@ -1,0 +1,60 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: logrank_collect_gserp_clicks_from_xcuv
+version: 0.0.1
+display_name: '[LogRank] Collect Gserp Clicks from xCUV'
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  jobpriority:
+    type: String
+    optional: false
+  jobtokens:
+    type: String
+    optional: false
+  nebulaarguments:
+    type: String
+    optional: false
+  start:
+    type: String
+    default: '"0"'
+    optional: true
+  end:
+    type: String
+    default: '"1"'
+    optional: true
+  source:
+    type: String
+    default: '"DesktopIE"'
+    optional: true
+  pagetype:
+    type: String
+    default: '"ALL"'
+    optional: true
+  traffic:
+    type: String
+    default: '"Normal"'
+    optional: true
+  returnhttps:
+    type: String
+    default: 'true'
+    optional: true
+  vc:
+    type: String
+    default: cosmos08/WebDataPlatform
+    optional: true
+outputs:
+  output:
+    type: AnyFile
+command: >-
+  python entry.py --output {outputs.output} --jobpriority {inputs.jobpriority} --jobtokens
+  {inputs.jobtokens} --nebulaarguments {inputs.nebulaarguments} [--start {inputs.start}]
+  [--end {inputs.end}] [--source {inputs.source}] [--pagetype {inputs.pagetype}] [--traffic
+  {inputs.traffic}] [--returnhttps {inputs.returnhttps}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

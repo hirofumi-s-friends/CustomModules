@@ -1,0 +1,101 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: scope_arbitrary
+version: 0.0.1
+display_name: Scope Arbitrary
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  input:
+    type:
+    - AnyDirectory
+    - AnyFile
+  issstream:
+    type: String
+    default: 'true'
+    optional: true
+  extract:
+    type: String
+    default: A:string, B:string, C:long
+    optional: true
+  statement1:
+    type: String
+    default: a = SELECT *
+    optional: true
+  statement2:
+    type: String
+    default: b = SELECT *
+    optional: true
+  statement3:
+    type: String
+    default: c = SELECT *
+    optional: true
+  statement4:
+    type: String
+    default: d = SELECT *
+    optional: true
+  statement5:
+    type: String
+    default: e = SELECT *
+    optional: true
+  statement6:
+    type: String
+    default: f = SELECT *
+    optional: true
+  statement7:
+    type: String
+    default: g = SELECT *
+    optional: true
+  statement8:
+    type: String
+    default: h = SELECT *
+    optional: true
+  statement9:
+    type: String
+    default: i = SELECT *
+    optional: true
+  statement10:
+    type: String
+    default: j = SELECT *
+    optional: true
+  isoutputsstream:
+    type: String
+    default: 'true'
+    optional: true
+  clustered:
+    type: String
+    default: //  CLUSTERED BY A, B, C SORTED BY A, B, C
+    optional: true
+  sorting:
+    type: String
+    default: //  ORDERED BY A, B, C
+    optional: true
+  csharpcode:
+    type: String
+    default: //  C# code
+    optional: true
+  vc:
+    type: String
+    default: cosmos09/relevance
+    optional: true
+outputs:
+  outputtxt:
+    type: AnyFile
+  outputss:
+    type: AnyFile
+command: >-
+  python entry.py --input {inputs.input} --outputtxt {outputs.outputtxt} --outputss
+  {outputs.outputss} [--issstream {inputs.issstream}] [--extract {inputs.extract}]
+  [--statement1 {inputs.statement1}] [--statement2 {inputs.statement2}] [--statement3
+  {inputs.statement3}] [--statement4 {inputs.statement4}] [--statement5 {inputs.statement5}]
+  [--statement6 {inputs.statement6}] [--statement7 {inputs.statement7}] [--statement8
+  {inputs.statement8}] [--statement9 {inputs.statement9}] [--statement10 {inputs.statement10}]
+  [--isoutputsstream {inputs.isoutputsstream}] [--clustered {inputs.clustered}] [--sorting
+  {inputs.sorting}] [--csharpcode {inputs.csharpcode}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

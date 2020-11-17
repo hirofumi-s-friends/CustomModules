@@ -1,0 +1,93 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: scopemultijoin
+version: 0.0.1
+display_name: ScopeMultiJoin
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  a:
+    type:
+    - AnyDirectory
+    - AnyFile
+  b:
+    type:
+    - AnyDirectory
+    - AnyFile
+  c:
+    type:
+    - AnyDirectory
+    - AnyFile
+  select1:
+    type: String
+    default: SELECT *
+    optional: true
+  select2:
+    type: String
+    default: SELECT *
+    optional: true
+  select3:
+    type: String
+    default: SELECT *
+    optional: true
+  select4:
+    type: String
+    default: SELECT *
+    optional: true
+  select5:
+    type: String
+    default: SELECT *
+    optional: true
+  select6:
+    type: String
+    default: SELECT *
+    optional: true
+  select7:
+    type: String
+    default: SELECT *
+    optional: true
+  select8:
+    type: String
+    default: SELECT *
+    optional: true
+  select9:
+    type: String
+    default: SELECT *
+    optional: true
+  select10:
+    type: String
+    default: SELECT *
+    optional: true
+  clustered:
+    type: String
+    default: foo
+    optional: true
+  sorted:
+    type: String
+    default: bar
+    optional: true
+  code:
+    type: String
+    default: //  Add code
+    optional: true
+  vc:
+    type: String
+    default: cosmos09/relevance
+    optional: true
+outputs:
+  output:
+    type: AnyFile
+command: >-
+  python entry.py --a {inputs.a} --b {inputs.b} --c {inputs.c} --output {outputs.output}
+  [--select1 {inputs.select1}] [--select2 {inputs.select2}] [--select3 {inputs.select3}]
+  [--select4 {inputs.select4}] [--select5 {inputs.select5}] [--select6 {inputs.select6}]
+  [--select7 {inputs.select7}] [--select8 {inputs.select8}] [--select9 {inputs.select9}]
+  [--select10 {inputs.select10}] [--clustered {inputs.clustered}] [--sorted {inputs.sorted}]
+  [--code {inputs.code}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux

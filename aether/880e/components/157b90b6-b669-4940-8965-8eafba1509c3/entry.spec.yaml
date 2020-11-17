@@ -1,0 +1,56 @@
+#  This is an auto generated component spec yaml file.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: sstreamprocessor_with_counts
+version: 0.0.1
+display_name: SStreamProcessor with counts
+type: CommandComponent
+is_deterministic: false
+tags:
+  codegenBy: dsl.component
+inputs:
+  input:
+    type:
+    - AnyDirectory
+    - AnyFile
+  preamble:
+    type: String
+    default: //
+    optional: true
+  scopecode:
+    type: String
+    default: SELECT * FROM Input;
+    optional: true
+  outputisstructuredstream:
+    type: Enum
+    enum:
+    - 'true'
+    - 'false'
+    default: 'true'
+    optional: true
+  outputspecification:
+    type: String
+    default: //
+    optional: true
+  csharpcode:
+    type: String
+    default: //
+    optional: true
+  vc:
+    type: String
+    default: cosmos08/AWE.Prod
+    optional: true
+outputs:
+  output:
+    type: AnyFile
+  counts:
+    type: AnyFile
+command: >-
+  python entry.py --input {inputs.input} --output {outputs.output} --counts {outputs.counts}
+  [--preamble {inputs.preamble}] [--scopecode {inputs.scopecode}] [--outputisstructuredstream
+  {inputs.outputisstructuredstream}] [--outputspecification {inputs.outputspecification}]
+  [--csharpcode {inputs.csharpcode}] [--vc {inputs.vc}]
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux
