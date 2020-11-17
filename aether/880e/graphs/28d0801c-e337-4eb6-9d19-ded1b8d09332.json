@@ -1,0 +1,3538 @@
+{
+  "VisualGraph": {
+    "Graph": {
+      "ModuleNodes": [
+        {
+          "Id": "782a8207",
+          "ModuleId": "11d1f1b4-9da2-402a-8261-acfa7961cf7f",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Preamble",
+              "Value": "//"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ScopeCode",
+              "Value": "gserps = SELECT *, GetTestSetType(Browses) AS Category, GetSerpTestSetType(Googles)  AS SerpCategory WHERE Googles > 0; "
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "public static string GetTestSetType(long browses){ if (browses >= 11) {return \"Head\";} if (browses >= 2) {return \"Body\";} if (browses == 1) {return \"Tail\";} return \"NoBrowse\"; } public static string GetSerpTestSetType(long serpClicks){ if (serpClicks >= 11) {return \"SerpHead\";} if (serpClicks >= 2) {return \"SerpBody\";} if (serpClicks == 1) {return \"SerpTail\";} return \"NoSerp\"; }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputIsStructuredStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputSpecification",
+              "Value": "CLUSTERED BY Hash SORTED BY Hash;"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "vc://cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "600"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-SplitPartitionThreshold 3000000000"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "38043b09",
+          "ModuleId": "5ff22a4d-dd2f-487d-ae50-4a7fbd759e3c",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Start",
+              "Value": "xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "End",
+              "Value": "xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Source",
+              "Value": "\"DesktopIE\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "PageType",
+              "Value": "\"ALL\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Traffic",
+              "Value": "\"Normal\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ReturnHttps",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform/"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "300"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-EnableBalancePartitions 1 -SplitPartitionThreshold 2000000000"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "2e0d4d5c",
+          "ModuleId": "cf11ccab-6a95-44d9-bfb3-294d14c6c2d4",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "PARAM_V2RepoVersion",
+              "Value": "V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "PARAM_SiteInsightVersion",
+              "Value": "SiteInsightVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "PARAM_V2LastSensor_DateString",
+              "Value": "V2LastSensor_DateString"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Step",
+              "Value": "\"Step1\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "150"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "1200"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-SplitPartitionThreshold 3000000000 "
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "56ab80fb",
+          "ModuleId": "cf11ccab-6a95-44d9-bfb3-294d14c6c2d4",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "PARAM_V2RepoVersion",
+              "Value": "V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "PARAM_SiteInsightVersion",
+              "Value": "SiteInsightVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "PARAM_V2LastSensor_DateString",
+              "Value": "V2LastSensor_DateString"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Step",
+              "Value": "\"Step2\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "600"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-SplitPartitionThreshold 3000000000 "
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "973b1de3",
+          "ModuleId": "1abac490-6e5d-4aa5-a237-2aff2ccb076c",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 2,
+              "AssignmentsToConcatenate": [
+                {
+                  "ValueType": 0,
+                  "AssignmentsToConcatenate": null,
+                  "Name": "",
+                  "Value": "/shares/searchStaticRank/local/RankFileSnapshots/StaticRank-Prod-Bn1/ConvertedToSS/"
+                },
+                {
+                  "ValueType": 1,
+                  "AssignmentsToConcatenate": null,
+                  "Name": "",
+                  "Value": "RankFileVersion"
+                },
+                {
+                  "ValueType": 0,
+                  "AssignmentsToConcatenate": null,
+                  "Name": "",
+                  "Value": "/RankFile.ss"
+                }
+              ],
+              "Name": "path",
+              "Value": ""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "vc://cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "98a5cae1",
+          "ModuleId": "157b90b6-b669-4940-8965-8eafba1509c3",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Preamble",
+              "Value": "//"
+            },
+            {
+              "ValueType": 2,
+              "AssignmentsToConcatenate": [
+                {
+                  "ValueType": 0,
+                  "AssignmentsToConcatenate": null,
+                  "Name": "",
+                  "Value": "SELECT * WHERE Rank >= "
+                },
+                {
+                  "ValueType": 1,
+                  "AssignmentsToConcatenate": null,
+                  "Name": "",
+                  "Value": "RankCutOff"
+                },
+                {
+                  "ValueType": 0,
+                  "AssignmentsToConcatenate": null,
+                  "Name": "",
+                  "Value": ";"
+                }
+              ],
+              "Name": "ScopeCode",
+              "Value": ""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputIsStructuredStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputSpecification",
+              "Value": "CLUSTERED BY Domain, HostSuffix, L1PathSuffix, URLSuffix SORTED BY Domain, HostSuffix, L1PathSuffix, URLSuffix;"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "9c0c50f0",
+          "ModuleId": "69aa4a95-26ef-4996-99d3-ea16bb2875f6",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "V2RepoVersion",
+              "Value": "V2RepoVersion"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "600"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-SplitPartitionThreshold 3000000000 "
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "75ea68d6",
+          "ModuleId": "11d1f1b4-9da2-402a-8261-acfa7961cf7f",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Preamble",
+              "Value": "//"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ScopeCode",
+              "Value": "bserps = SELECT *, GetSerpTestSetType(BSerp)  AS SerpCategory WHERE BSerp > 0; "
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "public static string GetSerpTestSetType(long serpClicks){ if (serpClicks >= 11) {return \"SerpHead\";} if (serpClicks >= 2) {return \"SerpBody\";} if (serpClicks == 1) {return \"SerpTail\";} return \"NoSerp\"; }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputIsStructuredStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputSpecification",
+              "Value": "CLUSTERED BY Hash SORTED BY Hash;"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "vc://cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "600"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-SplitPartitionThreshold 3000000000"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "ef0a497d",
+          "ModuleId": "07fb4b60-6b6c-4680-b3c0-e9eb7834c8fa",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Start",
+              "Value": "xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "End",
+              "Value": "xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Dataset",
+              "Value": "\"Bing.com\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Traffic",
+              "Value": "\"Normal\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "250"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-EnableBalancePartitions 1 -SplitPartitionThreshold 2000000000"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "c30dcaa2",
+          "ModuleId": "13eba6f3-b138-41e5-b60a-0906f5bd18c9",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "1c0225fa",
+          "ModuleId": "99a2d80a-8853-45d4-8252-1cae9e7370e5",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "delimiter",
+              "Value": "\" \""
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "afffdadf",
+          "ModuleId": "a2bfb8d5-4e4c-4541-acd4-25d4418bdfee",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "0585c5a1",
+          "ModuleId": "5ff22a4d-dd2f-487d-ae50-4a7fbd759e3c",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Start",
+              "Value": "xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "End",
+              "Value": "xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Source",
+              "Value": "\"Anaheim\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "PageType",
+              "Value": "\"ALL\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Traffic",
+              "Value": "\"Normal\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ReturnHttps",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform/"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "300"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-EnableBalancePartitions 1 -SplitPartitionThreshold 2000000000"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "36a79d8e",
+          "ModuleId": "ee694b87-9d5c-492b-8cad-15ed36426133",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Preamble",
+              "Value": "//"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ScopeCode",
+              "Value": "SELECT * FROM In1 UNION ALL SELECT * FROM In2; SELECT Hash, FIRST(Url) AS Url, SUM(Browses) AS Browses, SUM(Googles) AS Googles;"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputIsStructuredStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OutputSpecification",
+              "Value": "CLUSTERED BY Hash SORTED BY Hash;"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "128"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-EnableBalancePartitions 1 -SplitPartitionThreshold 2000000000"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "1336f0b7",
+          "ModuleId": "d0474e3a-ecf9-48f2-968a-1e8a672e01d9",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "84099b22",
+          "ModuleId": "9a084217-c514-4c4e-b75d-5ba81736bacc",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 3,
+              "AssignmentsToConcatenate": null,
+              "Name": "DestinationRoot",
+              "Value": "DestinationRoot"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ShouldRespectLineBoundaries",
+              "Value": "false"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "9feccf81",
+          "ModuleId": "75db3e04-eb68-4222-841a-fc0e236ca6d5",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CBSModel_TargetVersion",
+              "Value": "2"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExpessionToProduceSR2by4Score",
+              "Value": "ExpressionToProduceSR2by4Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobPriority",
+              "Value": "1000"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JobTokens",
+              "Value": "600"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "NebulaArguments",
+              "Value": "-EnableBalancePartitions 1 -SplitPartitionThreshold 500000000"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "0c40ff96",
+          "ModuleId": "d900f1d5-add5-43d2-bf86-7b0cf12308b7",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractA",
+              "Value": "A:string,B:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectA",
+              "Value": "hash, MAX(SR2by4Score) AS Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractB",
+              "Value": "C:string,D:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectB",
+              "Value": "Hash, MAX(BSerp) AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectAB",
+              "Value": "Score, hash, Hash, Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JoinType",
+              "Value": "LEFT OUTER JOIN"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OnAB",
+              "Value": "a.hash == b.Hash"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "SELECT hash, Score, Hash == null ? 0 : Clicks.Value AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT (int)Score AS Bucket, SUM(Clicks) AS Traffic, COUNT() AS NumUrls"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ClusterOrSorting",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//  Add your c# code here"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "67741d5f",
+          "ModuleId": "1d7cf6bd-dbb2-4fb7-b570-868c8610f949",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extract",
+              "Value": "A:string, B:string, C:long"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "SELECT (int) SR2by4Score AS Bucket, COUNT() AS Count, FIRST(url) AS FirstUrl"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement6",
+              "Value": "f = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement7",
+              "Value": "g = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement8",
+              "Value": "h = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement9",
+              "Value": "i = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement10",
+              "Value": "j = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsOutputSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorting",
+              "Value": "//  ORDERED BY A, B, C"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//  CODE"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "d85a3083",
+          "ModuleId": "d900f1d5-add5-43d2-bf86-7b0cf12308b7",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractA",
+              "Value": "A:string,B:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectA",
+              "Value": "hash, MAX(SR2by4Score) AS Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractB",
+              "Value": "C:string,D:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectB",
+              "Value": "Hash, MAX(Googles) AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectAB",
+              "Value": "Score, hash, Hash, Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JoinType",
+              "Value": "LEFT OUTER JOIN"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OnAB",
+              "Value": "a.hash == b.Hash"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "SELECT hash, Score, Hash == null ? 0 : Clicks.Value AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT (int)Score AS Bucket, SUM(Clicks) AS Traffic, COUNT() AS NumUrls"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ClusterOrSorting",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//  Add your c# code here"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "5c893377",
+          "ModuleId": "1d7cf6bd-dbb2-4fb7-b570-868c8610f949",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extract",
+              "Value": "A:string, B:string, C:long"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "REFERENCE \"/shares/searchIndexDiscoverySelection.Prod/local/resources/UrlNormalizer.Scope.UDO.dll\"; RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/resources/GetHashUtil.dll\";  RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/resources/SpamTableV2Wrapper.dll\"; RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/resources/SpamClassifier.dll\"; RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/resources/UrlNormalizer.Managed.dll\"; RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/CosmosGold/DiscoverySelection/UrlNormalizerConfig.Repo.ini\"; RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/CosmosGold/DiscoverySelection/UrlNormalizeRules.txt\"; RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/CosmosGold/DiscoverySelection/tld.txt\"; RESOURCE \"/shares/searchIndexDiscoverySelection.Prod/local/CosmosGold/DiscoverySelection/Spam_V2.wsv\"; REFERENCE \"/shares/searchIndexDiscoverySelection.Prod/local/URLRepositoryV2Snapshots/CMPRK-Prod2-Ch1/builds/LatestBuild/FrontEndUtil.dll\"; USING FrontEndUtil; REFERENCE \"/shares/searchIndexDiscoverySelection.Prod/local/URLRepositoryV2Snapshots/CMPRK-Prod2-Ch1/builds/LatestBuild/DiscoverySelection.Shared.dll\"; REFERENCE \"/shares/searchIndexDiscoverySelection.Prod/local/URLRepositoryV2Snapshots/CMPRK-Prod2-Ch1/builds/LatestBuild/DiscoverySelection.Util.dll\"; REFERENCE \"/shares/searchIndexDiscoverySelection.Prod/local/URLRepositoryV2Snapshots/CMPRK-Prod2-Ch1/builds/LatestBuild/UrlRepository.Interface.dll\"; USING UrlRepository.Interface; USING DiscoverySelection.Util;"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT Url, BSerp, CURLUtilities.GetCBUrlHash(Url) AS Hash "
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT * WHERE !string.IsNullOrEmpty(Hash)"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement6",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement7",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement8",
+              "Value": "h = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement9",
+              "Value": "i = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement10",
+              "Value": "j = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsOutputSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "CLUSTERED BY Hash SORTED BY Hash"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorting",
+              "Value": "//  ORDERED BY A, B, C"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "public static int CalculateBucket(float score, double sumExp) { var value = Math.Exp((double)score); var softmax = value / sumExp;var res = -1.0 * Math.Log(softmax); int bucket = (int)res; return bucket; }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "fd0c38ec",
+          "ModuleId": "d900f1d5-add5-43d2-bf86-7b0cf12308b7",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractA",
+              "Value": "A:string,B:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectA",
+              "Value": "*"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractB",
+              "Value": "C:string,D:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectB",
+              "Value": "*"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectAB",
+              "Value": "a.hash, a.SR2by4Score, b.Hash, b.BSerp"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JoinType",
+              "Value": "LEFT OUTER JOIN"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OnAB",
+              "Value": "a.hash == b.Hash"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "SELECT hash, Hash == null ? SR2by4Score : 10000 + (int) Math.Log( 1 + BSerp.Value , 1.1) AS SR2by4Score "
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ClusterOrSorting",
+              "Value": "CLUSTERED BY hash SORTED BY hash"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//  Add your c# code here"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "7c709529",
+          "ModuleId": "d900f1d5-add5-43d2-bf86-7b0cf12308b7",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractA",
+              "Value": "A:string,B:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectA",
+              "Value": "hash, MAX(SR2by4Score) AS Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractB",
+              "Value": "C:string,D:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectB",
+              "Value": "Hash, MAX(Googles) AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectAB",
+              "Value": "Score, hash, Hash, Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JoinType",
+              "Value": "LEFT OUTER JOIN"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OnAB",
+              "Value": "a.hash == b.Hash"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "SELECT hash, Score, Hash == null ? 0 : Clicks.Value AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT (int)Score AS Bucket, SUM(Clicks) AS Traffic, COUNT() AS NumUrls"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ClusterOrSorting",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//  Add your c# code here"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "5b0b4808",
+          "ModuleId": "d900f1d5-add5-43d2-bf86-7b0cf12308b7",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractA",
+              "Value": "A:string,B:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectA",
+              "Value": "hash, MAX(SR2by4Score) AS Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingA",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStreamB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExtractB",
+              "Value": "C:string,D:string"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectB",
+              "Value": "Hash, MAX(BSerp) AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "WhereB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "HavingB",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SelectAB",
+              "Value": "Score, hash, Hash, Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "JoinType",
+              "Value": "LEFT OUTER JOIN"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "OnAB",
+              "Value": "a.hash == b.Hash"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "SELECT hash, Score, Hash == null ? 0 : Clicks.Value AS Clicks"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT (int)Score AS Bucket, SUM(Clicks) AS Traffic, COUNT() AS NumUrls"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ClusterOrSorting",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "//  Add your c# code here"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "62fbe1de",
+          "ModuleId": "1d7cf6bd-dbb2-4fb7-b570-868c8610f949",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extract",
+              "Value": "A:string, B:string, C:long"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "a = SELECT LIST(new Tuple<int,long,long>(Bucket, Traffic, NumUrls)) AS List"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT o FROM a CROSS APPLY Utilities.GetAUC(List) AS o"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT o.Item1 AS Bucket,o.Item2 AS Log10Urls,o.Item3 AS CumTraffic"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement6",
+              "Value": "f = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement7",
+              "Value": "g = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement8",
+              "Value": "h = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement9",
+              "Value": "i = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement10",
+              "Value": "j = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsOutputSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorting",
+              "Value": "//  ORDERED BY A, B, C"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": " public static class Utilities { public static List<Tuple<int, double, double>> GetAUC(List<Tuple<int, long, long>> list) { list.Sort(delegate (Tuple<int, long, long> x, Tuple<int, long, long> y) { return y.Item1.CompareTo(x.Item1); });  long cum = 0; foreach (var item in list) { cum += item.Item2; }  List<Tuple<int, double, double>> output = new List<Tuple<int, double, double>>();  long numURLs = 0; long total = 0; foreach (var item in list) { numURLs += item.Item3; total += item.Item2; output.Add(new Tuple<int, double, double>(item.Item1, Math.Log10(numURLs), 1.0 * total / cum)); } return output; } }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "fd52594e",
+          "ModuleId": "1d7cf6bd-dbb2-4fb7-b570-868c8610f949",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extract",
+              "Value": "A:string, B:string, C:long"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "a = SELECT LIST(new Tuple<int,long,long>(Bucket, Traffic, NumUrls)) AS List"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT o FROM a CROSS APPLY Utilities.GetAUC(List) AS o"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT o.Item1 AS Bucket,o.Item2 AS Log10Urls,o.Item3 AS CumTraffic"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement6",
+              "Value": "f = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement7",
+              "Value": "g = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement8",
+              "Value": "h = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement9",
+              "Value": "i = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement10",
+              "Value": "j = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsOutputSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorting",
+              "Value": "//  ORDERED BY A, B, C"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": " public static class Utilities { public static List<Tuple<int, double, double>> GetAUC(List<Tuple<int, long, long>> list) { list.Sort(delegate (Tuple<int, long, long> x, Tuple<int, long, long> y) { return y.Item1.CompareTo(x.Item1); });  long cum = 0; foreach (var item in list) { cum += item.Item2; }  List<Tuple<int, double, double>> output = new List<Tuple<int, double, double>>();  long numURLs = 0; long total = 0; foreach (var item in list) { numURLs += item.Item3; total += item.Item2; output.Add(new Tuple<int, double, double>(item.Item1, Math.Log10(numURLs), 1.0 * total / cum)); } return output; } }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "eb95a6ff",
+          "ModuleId": "1d7cf6bd-dbb2-4fb7-b570-868c8610f949",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extract",
+              "Value": "A:string, B:string, C:long"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "a = SELECT LIST(new Tuple<int,long,long>(Bucket, Traffic, NumUrls)) AS List"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT o FROM a CROSS APPLY Utilities.GetAUC(List) AS o"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT o.Item1 AS Bucket,o.Item2 AS Log10Urls,o.Item3 AS CumTraffic"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement6",
+              "Value": "f = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement7",
+              "Value": "g = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement8",
+              "Value": "h = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement9",
+              "Value": "i = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement10",
+              "Value": "j = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsOutputSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorting",
+              "Value": "//  ORDERED BY A, B, C"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": " public static class Utilities { public static List<Tuple<int, double, double>> GetAUC(List<Tuple<int, long, long>> list) { list.Sort(delegate (Tuple<int, long, long> x, Tuple<int, long, long> y) { return y.Item1.CompareTo(x.Item1); });  long cum = 0; foreach (var item in list) { cum += item.Item2; }  List<Tuple<int, double, double>> output = new List<Tuple<int, double, double>>();  long numURLs = 0; long total = 0; foreach (var item in list) { numURLs += item.Item3; total += item.Item2; output.Add(new Tuple<int, double, double>(item.Item1, Math.Log10(numURLs), 1.0 * total / cum)); } return output; } }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "6633589a",
+          "ModuleId": "1d7cf6bd-dbb2-4fb7-b570-868c8610f949",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extract",
+              "Value": "A:string, B:string, C:long"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "a = SELECT LIST(new Tuple<int,long,long>(Bucket, Traffic, NumUrls)) AS List"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "SELECT o FROM a CROSS APPLY Utilities.GetAUC(List) AS o"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "SELECT o.Item1 AS Bucket,o.Item2 AS Log10Urls,o.Item3 AS CumTraffic"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement6",
+              "Value": "f = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement7",
+              "Value": "g = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement8",
+              "Value": "h = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement9",
+              "Value": "i = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement10",
+              "Value": "j = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsOutputSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "CLUSTERED BY Bucket INTO 2 SORTED BY Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorting",
+              "Value": "//  ORDERED BY A, B, C"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": " public static class Utilities { public static List<Tuple<int, double, double>> GetAUC(List<Tuple<int, long, long>> list) { list.Sort(delegate (Tuple<int, long, long> x, Tuple<int, long, long> y) { return y.Item1.CompareTo(x.Item1); });  long cum = 0; foreach (var item in list) { cum += item.Item2; }  List<Tuple<int, double, double>> output = new List<Tuple<int, double, double>>();  long numURLs = 0; long total = 0; foreach (var item in list) { numURLs += item.Item3; total += item.Item2; output.Add(new Tuple<int, double, double>(item.Item1, Math.Log10(numURLs), 1.0 * total / cum)); } return output; } }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        }
+      ],
+      "DatasetNodes": [
+        {
+          "Id": "b30cfa2b",
+          "DatasetId": "e6af24f5-960b-4bbe-836f-f7a82754dc70",
+          "DataPathParameterName": null,
+          "DataSetDefinition": null
+        }
+      ],
+      "SubGraphNodes": [],
+      "Edges": [
+        {
+          "SourceOutputPort": {
+            "NodeId": "36a79d8e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "782a8207",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "9c0c50f0",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "2e0d4d5c",
+            "PortName": "PARAM_Input_Stream",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "2e0d4d5c",
+            "PortName": "PARAM_Output_Features",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "56ab80fb",
+            "PortName": "PARAM_Input_Stream",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "973b1de3",
+            "PortName": "Path",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "98a5cae1",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "98a5cae1",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9c0c50f0",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "ef0a497d",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "75ea68d6",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "afffdadf",
+            "PortName": "Model As CS Code",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "c30dcaa2",
+            "PortName": "intput",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "b30cfa2b",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "1c0225fa",
+            "PortName": "script",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "c30dcaa2",
+            "PortName": "output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "1c0225fa",
+            "PortName": "inputFileName",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "0585c5a1",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "36a79d8e",
+            "PortName": "Input1",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "38043b09",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "36a79d8e",
+            "PortName": "Input2",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "1c0225fa",
+            "PortName": "outputFileName",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "84099b22",
+            "PortName": "InputResource",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "1336f0b7",
+            "PortName": "TmpPathPrefix",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "84099b22",
+            "PortName": "DestinationRoot",
+            "GraphPortName": null,
+            "IsParameter": true,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "56ab80fb",
+            "PortName": "PARAM_Output_Features",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9feccf81",
+            "PortName": "PARAM_Input_Stream",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "84099b22",
+            "PortName": "CosmosPath",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9feccf81",
+            "PortName": "ClassifierCode",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "9feccf81",
+            "PortName": "PARAM_Output_FV",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "0c40ff96",
+            "PortName": "InputA",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "75ea68d6",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "0c40ff96",
+            "PortName": "InputB",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "9feccf81",
+            "PortName": "PARAM_Output_FV",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "67741d5f",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "9feccf81",
+            "PortName": "PARAM_Output_FV",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "d85a3083",
+            "PortName": "InputA",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "782a8207",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "d85a3083",
+            "PortName": "InputB",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "9feccf81",
+            "PortName": "PARAM_Output_FV",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "fd0c38ec",
+            "PortName": "InputA",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "5c893377",
+            "PortName": "OutputSS",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "fd0c38ec",
+            "PortName": "InputB",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "fd0c38ec",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "7c709529",
+            "PortName": "InputA",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "782a8207",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "7c709529",
+            "PortName": "InputB",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "fd0c38ec",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5b0b4808",
+            "PortName": "InputA",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "75ea68d6",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5b0b4808",
+            "PortName": "InputB",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "5b0b4808",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "62fbe1de",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "7c709529",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "fd52594e",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "0c40ff96",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "eb95a6ff",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "d85a3083",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "6633589a",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "Trained Model",
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "afffdadf",
+            "PortName": "Trained Model",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "Clicks",
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5c893377",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "eb95a6ff",
+            "PortName": "OutputSS",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "BSERP",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "6633589a",
+            "PortName": "OutputSS",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "GSERP",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "62fbe1de",
+            "PortName": "OutputSS",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "BSERP_WithClicks",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "fd52594e",
+            "PortName": "OutputSS",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "GSERP_WithClicks",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        }
+      ],
+      "DefaultCompute": null,
+      "Id": null,
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "1970-01-01T00:00:00",
+      "LastModifiedDate": "1970-01-01T00:00:00",
+      "EntityStatus": 0
+    },
+    "Layout": {
+      "NodeLayouts": {
+        "ea05f3bc": {
+          "X": 1840.43628,
+          "Y": 127.721664,
+          "Width": 180.0,
+          "Height": 63.61
+        },
+        "2e0d4d5c": {
+          "X": 1243.725,
+          "Y": 394.052429,
+          "Width": 534.6667,
+          "Height": 120.666664
+        },
+        "782a8207": {
+          "X": 667.0576,
+          "Y": 752.8554,
+          "Width": 433.333344,
+          "Height": 148.666656
+        },
+        "38043b09": {
+          "X": 849.140137,
+          "Y": 330.5982,
+          "Width": 341.333344,
+          "Height": 115.333336
+        },
+        "56ab80fb": {
+          "X": 1240.31982,
+          "Y": 536.345764,
+          "Width": 520.0,
+          "Height": 133.333328
+        },
+        "973b1de3": {
+          "X": 1312.16663,
+          "Y": 0.0,
+          "Width": 380.4524,
+          "Height": 77.5317459
+        },
+        "98a5cae1": {
+          "X": 1302.83337,
+          "Y": 143.588318,
+          "Width": 403.222229,
+          "Height": 58.44444
+        },
+        "9c0c50f0": {
+          "X": 1289.5,
+          "Y": 261.188324,
+          "Width": 408.666656,
+          "Height": 83.3333359
+        },
+        "1c0225fa": {
+          "X": 2562.28,
+          "Y": 442.8949,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "75ea68d6": {
+          "X": 13.8333359,
+          "Y": 748.0678,
+          "Width": 433.333344,
+          "Height": 148.666656
+        },
+        "ef0a497d": {
+          "X": 0.0,
+          "Y": 333.06778,
+          "Width": 422.0,
+          "Height": 114.666664
+        },
+        "c30dcaa2": {
+          "X": 2653.48,
+          "Y": 350.895,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "b30cfa2b": {
+          "X": 2444.68018,
+          "Y": 352.494965,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "afffdadf": {
+          "X": 2441.21045,
+          "Y": 250.958862,
+          "Width": 438.0,
+          "Height": 73.3333359
+        },
+        "0585c5a1": {
+          "X": 493.5,
+          "Y": 330.521667,
+          "Width": 341.333344,
+          "Height": 115.333336
+        },
+        "36a79d8e": {
+          "X": 536.5,
+          "Y": 511.521667,
+          "Width": 586.6667,
+          "Height": 124.666672
+        },
+        "1336f0b7": {
+          "X": 2848.05078,
+          "Y": 449.562683,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "84099b22": {
+          "X": 2544.45068,
+          "Y": 576.071,
+          "Width": 286.0,
+          "Height": 60.0
+        },
+        "9feccf81": {
+          "X": 1674.25867,
+          "Y": 892.246338,
+          "Width": 634.0,
+          "Height": 144.8
+        },
+        "0c40ff96": {
+          "X": 21.1908588,
+          "Y": 1148.42444,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "67741d5f": {
+          "X": 1178.19116,
+          "Y": 1209.56226,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "3922bde4": {
+          "X": 2603.30542,
+          "Y": 1029.42334,
+          "Width": 121.333336,
+          "Height": 41.65
+        },
+        "d85a3083": {
+          "X": 544.266846,
+          "Y": 1158.1936,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "5c893377": {
+          "X": 2501.05566,
+          "Y": 1008.76892,
+          "Width": 200.0,
+          "Height": 65.3333359
+        },
+        "fd0c38ec": {
+          "X": 1986.21741,
+          "Y": 1166.729,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "5775b178": {
+          "X": 2848.21753,
+          "Y": 1123.40393,
+          "Width": 180.0,
+          "Height": 63.61
+        },
+        "7c709529": {
+          "X": 1777.51465,
+          "Y": 1273.76392,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "5b0b4808": {
+          "X": 1858.48364,
+          "Y": 1414.93054,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "62fbe1de": {
+          "X": 1860.16663,
+          "Y": 1525.3938,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "988198a9": {
+          "X": 2020.1665,
+          "Y": 1508.49548,
+          "Width": 121.333336,
+          "Height": 41.65
+        },
+        "fd52594e": {
+          "X": 1535.08667,
+          "Y": 1514.08716,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "88c4fed0": {
+          "X": 1706.41992,
+          "Y": 1501.85547,
+          "Width": 121.333336,
+          "Height": 41.65
+        },
+        "eb95a6ff": {
+          "X": 24.166666,
+          "Y": 1336.79211,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "079324f3": {
+          "X": 195.499924,
+          "Y": 1324.56042,
+          "Width": 121.333336,
+          "Height": 41.65
+        },
+        "6633589a": {
+          "X": 453.5,
+          "Y": 1332.12549,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "75a693c2": {
+          "X": 666.166565,
+          "Y": 1322.56042,
+          "Width": 121.333336,
+          "Height": 41.65
+        }
+      },
+      "CommentThreads": {
+        "ea05f3bc": {
+          "Comments": [
+            {
+              "Text": "Domain, Host, L1Path, URLSuffix segmented output",
+              "Owner": "REDMOND\\shpu",
+              "CreatedDate": "2020-07-29T01:50:47.1304207+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": []
+        },
+        "3922bde4": {
+          "Comments": [
+            {
+              "Text": "Getting the count",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-09-01T04:23:22.1464766+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "67741d5f"
+          ]
+        },
+        "5775b178": {
+          "Comments": [
+            {
+              "Text": "Order URLS by clicks in previous week",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-09-20T03:54:46.8177202+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "fd0c38ec"
+          ]
+        },
+        "988198a9": {
+          "Comments": [
+            {
+              "Text": "Getting the count",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-09-01T04:23:22.1464766+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "62fbe1de"
+          ]
+        },
+        "88c4fed0": {
+          "Comments": [
+            {
+              "Text": "Getting the count",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-09-01T04:23:22.1464766+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "fd52594e"
+          ]
+        },
+        "079324f3": {
+          "Comments": [
+            {
+              "Text": "Getting the count",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-09-01T04:23:22.1464766+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "eb95a6ff"
+          ]
+        },
+        "75a693c2": {
+          "Comments": [
+            {
+              "Text": "Getting the count",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-09-01T04:23:22.1464766+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "6633589a"
+          ]
+        }
+      },
+      "Id": null,
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "1970-01-01T00:00:00",
+      "LastModifiedDate": "1970-01-01T00:00:00",
+      "EntityStatus": 0
+    },
+    "Aliases": {
+      "AliasedValues": null,
+      "NodeAliases": {},
+      "Id": null,
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "2020-11-17T16:49:26.236021+08:00",
+      "LastModifiedDate": "2020-11-17T16:49:26.236021+08:00",
+      "EntityStatus": 0
+    }
+  },
+  "Interface": {
+    "Parameters": [
+      {
+        "Name": "V2RepoVersion",
+        "Documentation": null,
+        "DefaultValue": "\"0\"",
+        "IsOptional": false,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "V2LastSensor_DateString",
+        "Documentation": null,
+        "DefaultValue": "\"2009/01/01\"",
+        "IsOptional": false,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "SiteInsightVersion",
+        "Documentation": null,
+        "DefaultValue": "\"0\"",
+        "IsOptional": false,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "SR2x4ScoreCol",
+        "Documentation": null,
+        "DefaultValue": "SR2by4Score",
+        "IsOptional": false,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "ExpressionToProduceSR2by4Score",
+        "Documentation": null,
+        "DefaultValue": " _sr2by4Classifier.GetScore ( RawMainlineSR2x4FV )",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "RankFileVersion",
+        "Documentation": null,
+        "DefaultValue": "11149",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "RankCutOff",
+        "Documentation": null,
+        "DefaultValue": "10",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "xSLAPI_xCUV_Version",
+        "Documentation": null,
+        "DefaultValue": "\"0\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Top100M_xSLAPI_Start",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Top100M_xSLAPI_End",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      }
+    ],
+    "Ports": {
+      "Inputs": [
+        {
+          "Name": "Trained Model",
+          "Documentation": null,
+          "DataTypesIds": [
+            "GenericBinary"
+          ],
+          "IsOptional": false,
+          "ParameterName": null,
+          "IsStrictOptional": false
+        },
+        {
+          "Name": "Clicks",
+          "Documentation": null,
+          "DataTypesIds": [
+            "CosmosPath"
+          ],
+          "IsOptional": false,
+          "ParameterName": null,
+          "IsStrictOptional": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "BSERP",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        },
+        {
+          "Name": "GSERP",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        },
+        {
+          "Name": "BSERP_WithClicks",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        },
+        {
+          "Name": "GSERP_WithClicks",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        }
+      ]
+    },
+    "ParameterNamesByGroups": [],
+    "MetadataParameters": null,
+    "DataPathParameters": null,
+    "DataPathParameterList": null
+  }
+}

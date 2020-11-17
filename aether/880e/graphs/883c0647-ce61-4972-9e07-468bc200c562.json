@@ -1,0 +1,2807 @@
+{
+  "VisualGraph": {
+    "Graph": {
+      "ModuleNodes": [
+        {
+          "Id": "34f78f15",
+          "ModuleId": "b7aaf42a-f819-4858-8141-7094e5646b8a",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Start",
+              "Value": "Start1"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "End",
+              "Value": "End1"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Dataset",
+              "Value": "\"Bing.com\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Traffic",
+              "Value": "\"Normal\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select1",
+              "Value": "a = SELECT Webs"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select2",
+              "Value": "SELECT Web FROM a CROSS APPLY Webs AS Web"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select3",
+              "Value": "SELECT Web.URL AS Url, COUNT() AS Count WHERE Web.Clicks.Count > 0"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select4",
+              "Value": "SELECT *, (int) Math.Log(1.0 * Count, 1.1) AS Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select6",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select7",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select8",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select9",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select10",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorted",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "scopeparams",
+              "Value": "-buckets 1000 -on BondIntermediates"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "b53bb626",
+          "ModuleId": "b7aaf42a-f819-4858-8141-7094e5646b8a",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Start",
+              "Value": "Start2"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "End",
+              "Value": "End2"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Dataset",
+              "Value": "\"Bing.com\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Traffic",
+              "Value": "\"Normal\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select1",
+              "Value": "a = SELECT Webs"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select2",
+              "Value": "SELECT Web FROM a CROSS APPLY Webs AS Web"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select3",
+              "Value": "SELECT Web.URL AS Url, COUNT() AS Count WHERE Web.Clicks.Count > 0"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select4",
+              "Value": "SELECT *, (int) Math.Log(1.0 * Count, 1.1) AS Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select6",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select7",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select8",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select9",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select10",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorted",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "scopeparams",
+              "Value": null
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "5ec506d2",
+          "ModuleId": "568ea54c-40ec-4209-807a-762f8f944a67",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select1",
+              "Value": "SELECT a.Url AS U1, a.Count AS C1, b.Url  AS U2, b.Count AS C2 FROM a FULL OUTER JOIN b ON a.Url == b.Url "
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select2",
+              "Value": "d = SELECT U1 == null ? U2 : U1 AS U12, U1 == null ? 0 : C1.Value AS C1, U2 == null ? 0 : C2.Value AS C2"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select3",
+              "Value": "SELECT U12, C1, C2, c.Url, c.Count AS C3 FROM d FULL OUTER JOIN c ON d.U12 == c.Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select4",
+              "Value": "SELECT U12 == null ? Url : U12 AS Url,  U12 == null ? 0 : C1.Value AS C1,  U12 == null ? 0 : C2.Value AS C2, Url == null ? 0 : C3.Value AS C3"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select5",
+              "Value": "SELECT *, C1 + C2 + C3 AS Total"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select6",
+              "Value": "SELECT * WHERE C3 > 0"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select7",
+              "Value": "SELECT *, 0.3333 / ( 1.0 / (C1 + 0.00001) + 1.0 / (C2 + 0.00000000001) + 1.0 / C3) AS Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select8",
+              "Value": "SELECT *, (int) Math.Log(3.0 * Score, 1.1) AS Bucket, C2 > 0 ? ( C1 > 0 ? 123 : 23) : (C1 > 0 ? 13 : 3) AS Days "
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select9",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select10",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorted",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Code",
+              "Value": "//  Add code"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "5f7cc6ec",
+          "ModuleId": "b7aaf42a-f819-4858-8141-7094e5646b8a",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Start",
+              "Value": "Start3"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "End",
+              "Value": "End3"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Dataset",
+              "Value": "\"Bing.com\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Traffic",
+              "Value": "\"Normal\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select1",
+              "Value": "a = SELECT Webs"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select2",
+              "Value": "SELECT Web FROM a CROSS APPLY Webs AS Web"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select3",
+              "Value": "SELECT Web.URL AS Url, COUNT() AS Count WHERE Web.Clicks.Count > 0"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select4",
+              "Value": "SELECT *, (int) Math.Log(1.0 * Count, 1.1) AS Bucket"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select6",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select7",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select8",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select9",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select10",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorted",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "scopeparams",
+              "Value": "-buckets 1000 -on BondIntermediates"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "b400a9fd",
+          "ModuleId": "1d7cf6bd-dbb2-4fb7-b570-868c8610f949",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extract",
+              "Value": "A:string, B:string, C:long"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement1",
+              "Value": "a = SELECT Url, Bucket, Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement2",
+              "Value": "b = SELECT Bucket, COUNT() AS Count"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement3",
+              "Value": "c = SELECT LIST(new Tuple<int,long>(Bucket, Count)) AS list"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement4",
+              "Value": "d = SELECT Utilities.GetCutoff(100000000, list) AS Cutoff"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement5",
+              "Value": "SELECT Url, Bucket, Score, Cutoff FROM a CROSS JOIN d"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement6",
+              "Value": "f = SELECT Url, Score AS BSerp WHERE Bucket >= Cutoff"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement7",
+              "Value": "g = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement8",
+              "Value": "h = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement9",
+              "Value": "i = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Statement10",
+              "Value": "j = SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "IsOutputSStream",
+              "Value": "true"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "CLUSTERED BY Url  SORTED BY Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorting",
+              "Value": "//  ORDERED BY A, B, C"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "CSharpCode",
+              "Value": "public static class Utilities { public static int GetCutoff(long num, List<Tuple<int,long>> list) { list.Sort(delegate (Tuple<int, long> x, Tuple<int, long> y) { return y.Item1.CompareTo(x.Item1); });  long cum = 0; int bucket = 0; foreach(var item in list) { cum += item.Item2; if (cum > num) return bucket;  bucket = item.Item1; } return bucket; } }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        },
+        {
+          "Id": "f9aaa77e",
+          "ModuleId": "b7aaf42a-f819-4858-8141-7094e5646b8a",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Start",
+              "Value": "Start3"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "End",
+              "Value": "End3"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Dataset",
+              "Value": "\"Bing.com\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Traffic",
+              "Value": "\"Normal\""
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select1",
+              "Value": "a = SELECT Utils.GetClickedURL(Webs) AS Url, COUNT() AS BSerp HAVING !string.IsNullOrEmpty(Url)"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select2",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select3",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select4",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select5",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select6",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select7",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select8",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select9",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Select10",
+              "Value": "SELECT *"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Clustered",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Sorted",
+              "Value": "Url"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "vc",
+              "Value": "cosmos08/WebDataPlatform"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "scopeparams",
+              "Value": null
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": null,
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        }
+      ],
+      "DatasetNodes": [
+        {
+          "Id": "57250ee2",
+          "DatasetId": "e1a5ccfc-8615-4f25-a2de-0f500017aebf",
+          "DataPathParameterName": null,
+          "DataSetDefinition": null
+        },
+        {
+          "Id": "7a202a30",
+          "DatasetId": "89206602-fdd9-4a15-84e6-c3842d5fe0fd",
+          "DataPathParameterName": null,
+          "DataSetDefinition": null
+        },
+        {
+          "Id": "ca7608d8",
+          "DatasetId": "d4582b4d-c16d-4521-8050-2c0d2a277836",
+          "DataPathParameterName": null,
+          "DataSetDefinition": null
+        },
+        {
+          "Id": "daadad5f",
+          "DatasetId": "af862ccf-5861-4314-abc6-ad9f876060f2",
+          "DataPathParameterName": null,
+          "DataSetDefinition": null
+        },
+        {
+          "Id": "f28f9052",
+          "DatasetId": "c22111fe-845e-46fa-9279-2a8634295991",
+          "DataPathParameterName": null,
+          "DataSetDefinition": null
+        }
+      ],
+      "SubGraphNodes": [
+        {
+          "Id": "903bdfc7",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.15 nl=100 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "b2156b9f",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.15 nl=100 mil=100 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "b7c0df41",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.3 nl=100 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "e781e029",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.3 nl=200 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "9fbe649c",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.15 nl=100 mil=100 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "2f360496",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.15 nl=100 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "12f735e2",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.3 nl=200 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "1be4df91",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.3 nl=100 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "e163f50a",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.3 nl=200 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "9df731bd",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.3 nl=100 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "9ea681e1",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.15 nl=100 mil=1000 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "12957151",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeRanking {lr=0.15 nl=100 mil=100 iter=1000}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{sep=, col=Label:R4:2 col=GroupId:U4[0-*]:0 col=Features:R4:3-272}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "6aae85f3",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeBinaryClassification {nl = 160 mil = 1280 milnz = 800 iter = 2000 tf=1 dt+ flocks-}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{ sep=, col=Name:TX:0 col=Version:R4:1 col=Label:R4:2 col=Weight:R4:3 col=Features:R4:4-273 }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "51939cb4",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeBinaryClassification {nl = 160 mil = 1280 milnz = 800 iter = 2000 tf=1 dt+ flocks-}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{ sep=, col=Name:TX:0 col=Version:R4:1 col=Label:R4:2 col=Weight:R4:3 col=Features:R4:4-273 }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "5a5a90b5",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeBinaryClassification {nl = 200 mil = 1280 milnz = 800 iter = 1000 tf=1 dt+ flocks-}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{ sep=, col=Name:TX:0 col=Version:R4:1 col=Label:R4:2 col=Weight:R4:3 col=Features:R4:4-273 }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        },
+        {
+          "Id": "e2d443d1",
+          "SubGraphId": "ad6073b3-041f-426b-982a-f9921e3422fa",
+          "GraphId": "5f79ad8c-3e6c-4fb6-8976-34da5fd858ca",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_V2Repo_LastSensorDateStr",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_SiteInsighVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_RankfileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Metrics_xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "FastTreeBinaryClassification {nl = 200 mil = 1280 milnz = 800 iter = 1000 tf=1 dt+ flocks-}"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader",
+              "Value": "TextLoader{ sep=, col=Name:TX:0 col=Version:R4:1 col=Label:R4:2 col=Weight:R4:3 col=Features:R4:4-273 }"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": null
+            }
+          ]
+        }
+      ],
+      "Edges": [
+        {
+          "SourceOutputPort": {
+            "NodeId": "34f78f15",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5ec506d2",
+            "PortName": "A",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "b53bb626",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5ec506d2",
+            "PortName": "B",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "5f7cc6ec",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5ec506d2",
+            "PortName": "C",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "5ec506d2",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "b400a9fd",
+            "PortName": "Input",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "57250ee2",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "903bdfc7",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "903bdfc7",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "57250ee2",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "b2156b9f",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "b2156b9f",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "57250ee2",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "b7c0df41",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "b7c0df41",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "57250ee2",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "e781e029",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "e781e029",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "7a202a30",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9fbe649c",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9fbe649c",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "7a202a30",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "2f360496",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "2f360496",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "7a202a30",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "12f735e2",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "12f735e2",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "7a202a30",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "1be4df91",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "1be4df91",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "ca7608d8",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "e163f50a",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "e163f50a",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "ca7608d8",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9df731bd",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9df731bd",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "ca7608d8",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9ea681e1",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "9ea681e1",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "ca7608d8",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "12957151",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "12957151",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f28f9052",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "6aae85f3",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "6aae85f3",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "daadad5f",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "51939cb4",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "51939cb4",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f28f9052",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5a5a90b5",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f9aaa77e",
+            "PortName": "Output",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "5a5a90b5",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "f28f9052",
+            "PortName": "",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "e2d443d1",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "b400a9fd",
+            "PortName": "OutputSS",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "e2d443d1",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        }
+      ],
+      "DefaultCompute": null,
+      "Id": "883c0647-ce61-4972-9e07-468bc200c562",
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "1970-01-01T00:00:00",
+      "LastModifiedDate": "1970-01-01T00:00:00",
+      "EntityStatus": 0
+    },
+    "Layout": {
+      "NodeLayouts": {
+        "57250ee2": {
+          "X": 411.166656,
+          "Y": 59.873333,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "b7c0df41": {
+          "X": 516.5,
+          "Y": 198.486664,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "903bdfc7": {
+          "X": 294.5,
+          "Y": 196.486664,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "b2156b9f": {
+          "X": 44.4666672,
+          "Y": 195.773422,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "e781e029": {
+          "X": 737.1667,
+          "Y": 198.486664,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "9fbe649c": {
+          "X": 52.5,
+          "Y": 463.166748,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "1be4df91": {
+          "X": 507.916656,
+          "Y": 465.88,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "7a202a30": {
+          "X": 402.5833,
+          "Y": 327.266663,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "12f735e2": {
+          "X": 728.5834,
+          "Y": 465.88,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "2f360496": {
+          "X": 285.916656,
+          "Y": 463.88,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "ca7608d8": {
+          "X": 405.916656,
+          "Y": 615.266663,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "e163f50a": {
+          "X": 731.9167,
+          "Y": 753.88,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "9df731bd": {
+          "X": 511.25,
+          "Y": 753.88,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "9ea681e1": {
+          "X": 289.25,
+          "Y": 751.88,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "12957151": {
+          "X": 55.8333321,
+          "Y": 751.166748,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "f28f9052": {
+          "X": 1878.7334,
+          "Y": 51.47334,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "6aae85f3": {
+          "X": 1789.98315,
+          "Y": 173.373413,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "51939cb4": {
+          "X": 1377.16663,
+          "Y": 170.040085,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "daadad5f": {
+          "X": 1376.58337,
+          "Y": 49.47334,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "5a5a90b5": {
+          "X": 2023.83325,
+          "Y": 170.54,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "34f78f15": {
+          "X": 2334.18,
+          "Y": 66.25032,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "b53bb626": {
+          "X": 2562.84668,
+          "Y": 66.25032,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "5ec506d2": {
+          "X": 2561.51318,
+          "Y": 221.418655,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "5f7cc6ec": {
+          "X": 2788.84668,
+          "Y": 65.58366,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "b400a9fd": {
+          "X": 2560.84668,
+          "Y": 359.3853,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "98299f82": {
+          "X": 2820.18,
+          "Y": 217.996979,
+          "Width": 180.0,
+          "Height": 63.61
+        },
+        "6095ed40": {
+          "X": 2818.84668,
+          "Y": 365.457031,
+          "Width": 180.0,
+          "Height": 47.65
+        },
+        "f9aaa77e": {
+          "X": 691.963,
+          "Y": 59.2202225,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "e2d443d1": {
+          "X": 1991.84167,
+          "Y": 633.392334,
+          "Width": 200.0,
+          "Height": 60.0
+        },
+        "4e3020f8": {
+          "X": 192.5,
+          "Y": 12.54,
+          "Width": 212.0,
+          "Height": 66.9033356
+        },
+        "348e00b9": {
+          "X": 1233.83337,
+          "Y": 2.0,
+          "Width": 180.0,
+          "Height": 66.2366638
+        },
+        "e29ccddc": {
+          "X": 1697.83337,
+          "Y": 4.66666651,
+          "Width": 204.666672,
+          "Height": 67.53
+        },
+        "03d32579": {
+          "X": 1867.67993,
+          "Y": 566.54,
+          "Width": 180.0,
+          "Height": 66.4866638
+        },
+        "2dd81477": {
+          "X": 842.9859,
+          "Y": 2.54,
+          "Width": 199.333328,
+          "Height": 67.57
+        },
+        "baa33dc1": {
+          "X": 2458.34668,
+          "Y": 5.87333345,
+          "Width": 180.0,
+          "Height": 68.2366638
+        }
+      },
+      "CommentThreads": {
+        "98299f82": {
+          "Comments": [
+            {
+              "Text": "Get counts for the last 3 time periods",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-07-10T08:00:23.3632636+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "5ec506d2"
+          ]
+        },
+        "6095ed40": {
+          "Comments": [
+            {
+              "Text": "Bucketize and select < 100M",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-09-03T00:43:09.0470721+08:00",
+              "StyleId": null
+            }
+          ],
+          "AttachedToNodeIds": [
+            "b400a9fd"
+          ]
+        },
+        "4e3020f8": {
+          "Comments": [
+            {
+              "Text": "THESE RANKING MODELS DO NOT WORK AS WELL AS THE BINARY CLASSIFICATION",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-10-24T02:48:47.059326+08:00",
+              "StyleId": "RedStyle"
+            }
+          ],
+          "AttachedToNodeIds": []
+        },
+        "348e00b9": {
+          "Comments": [
+            {
+              "Text": "THIS IS THE LOGRANK MODEL.  IT DOESN'T PERFORM AS WELL",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-10-24T02:48:34.3625386+08:00",
+              "StyleId": "RedStyle"
+            }
+          ],
+          "AttachedToNodeIds": []
+        },
+        "e29ccddc": {
+          "Comments": [
+            {
+              "Text": "THIS IS THE BINARY CLASSIFICATION FOR THE NEXT DAY.  IT PERFORMS THE BEST",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-10-24T02:48:16.8022217+08:00",
+              "StyleId": "GreenStyle"
+            }
+          ],
+          "AttachedToNodeIds": []
+        },
+        "03d32579": {
+          "Comments": [
+            {
+              "Text": "ADJUSTING THE TOP 100M USING PREVIOUS 3 WEEKS OF CLICKS ",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-10-24T02:48:06.6217437+08:00",
+              "StyleId": "GreenStyle"
+            }
+          ],
+          "AttachedToNodeIds": []
+        },
+        "2dd81477": {
+          "Comments": [
+            {
+              "Text": "TOP 100M - NAIVELY USING ANYTHING CLICKED DOESN'T HANDLE THE O(8) DECILE",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-10-24T02:50:12.931778+08:00",
+              "StyleId": "RedStyle"
+            }
+          ],
+          "AttachedToNodeIds": []
+        },
+        "baa33dc1": {
+          "Comments": [
+            {
+              "Text": "USING 3 WEEKS' OF DATA HELPED WITH ORDERING THE TOP 100M",
+              "Owner": "REDMOND\\brams",
+              "CreatedDate": "2020-10-24T02:50:41.3489418+08:00",
+              "StyleId": "GreenStyle"
+            }
+          ],
+          "AttachedToNodeIds": []
+        }
+      },
+      "Id": "883c0647-ce61-4972-9e07-468bc200c562",
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "1970-01-01T00:00:00",
+      "LastModifiedDate": "1970-01-01T00:00:00",
+      "EntityStatus": 0
+    },
+    "Aliases": {
+      "AliasedValues": null,
+      "NodeAliases": {},
+      "Id": "883c0647-ce61-4972-9e07-468bc200c562",
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "2020-11-17T16:49:16.8281568+08:00",
+      "LastModifiedDate": "2020-11-17T16:49:16.8281568+08:00",
+      "EntityStatus": 0
+    }
+  },
+  "Interface": {
+    "Parameters": [
+      {
+        "Name": "Metrics_V2RepoVersion",
+        "Documentation": null,
+        "DefaultValue": "11173",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_V2Repo_LastSensorDateStr",
+        "Documentation": null,
+        "DefaultValue": "\"2020-10-14\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_SiteInsighVersion",
+        "Documentation": null,
+        "DefaultValue": "\"4304\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_RankfileVersion",
+        "Documentation": null,
+        "DefaultValue": "11169",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_xSLAPI_xCUV_Version",
+        "Documentation": null,
+        "DefaultValue": "\"4304\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Start1",
+        "Documentation": null,
+        "DefaultValue": "\"2020-09-23\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "End1",
+        "Documentation": null,
+        "DefaultValue": "\"2020-09-29\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Start2",
+        "Documentation": null,
+        "DefaultValue": "\"2020-09-30\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "End2",
+        "Documentation": null,
+        "DefaultValue": "\"2020-10-06\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Start3",
+        "Documentation": null,
+        "DefaultValue": "\"2020-10-07\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "End3",
+        "Documentation": null,
+        "DefaultValue": "\"2020-10-13\"",
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      }
+    ],
+    "Ports": {
+      "Inputs": [],
+      "Outputs": []
+    },
+    "ParameterNamesByGroups": [],
+    "MetadataParameters": null,
+    "DataPathParameters": null,
+    "DataPathParameterList": null
+  }
+}

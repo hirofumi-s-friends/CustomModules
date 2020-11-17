@@ -1,0 +1,441 @@
+{
+  "VisualGraph": {
+    "Graph": {
+      "ModuleNodes": [
+        {
+          "Id": "b737f2be",
+          "ModuleId": "9e0b1d5b-80fc-4a58-9393-d581fbe4a406",
+          "Comment": null,
+          "CloudPriority": 0,
+          "DefaultDataRetentionHint": null,
+          "ModuleParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Predictor",
+              "Value": "Predictor"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Loader Config",
+              "Value": "Loader"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Transforms",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Cache Examples in Memory",
+              "Value": "+"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Random seed",
+              "Value": "1"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Calibrator Class",
+              "Value": null
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "Extra Arguments",
+              "Value": null
+            }
+          ],
+          "ModuleMetadataParameters": null,
+          "ModuleOutputSettings": null,
+          "ModuleInputSettings": null,
+          "UseGraphDefaultCompute": false,
+          "ComplianceCluster": "",
+          "EuclidWorkspaceId": null,
+          "AttachedModules": null,
+          "AcceptableMachineClusters": [],
+          "CustomDataLocationId": null,
+          "AlertTimeoutDuration": null,
+          "Runconfig": null,
+          "RegenerateOutput": false,
+          "ControlInputs": null
+        }
+      ],
+      "DatasetNodes": [],
+      "SubGraphNodes": [
+        {
+          "Id": "13a19d8b",
+          "SubGraphId": "28d0801c-e337-4eb6-9d19-ded1b8d09332",
+          "GraphId": "73ec4988-c6ac-454a-8af1-102833140d32",
+          "DefaultDataRetentionHint": null,
+          "SubGraphParameters": [
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "V2RepoVersion",
+              "Value": "Metrics_V2RepoVersion"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "V2LastSensor_DateString",
+              "Value": "Metrics_V2Repo_LastSensorDateStr"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "SiteInsightVersion",
+              "Value": "Metrics_SiteInsighVersion"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "SR2x4ScoreCol",
+              "Value": "SR2by4Score"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "ExpressionToProduceSR2by4Score",
+              "Value": " _sr2by4Classifier.GetScore ( RawMainlineSRxFV )"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "RankFileVersion",
+              "Value": "Metrics_RankfileVersion"
+            },
+            {
+              "ValueType": 0,
+              "AssignmentsToConcatenate": null,
+              "Name": "RankCutOff",
+              "Value": "10"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "xSLAPI_xCUV_Version",
+              "Value": "Metrics_xSLAPI_xCUV_Version"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_Start",
+              "Value": "Top100M_xSLAPI_Start"
+            },
+            {
+              "ValueType": 1,
+              "AssignmentsToConcatenate": null,
+              "Name": "Top100M_xSLAPI_End",
+              "Value": "Top100M_xSLAPI_End"
+            }
+          ]
+        }
+      ],
+      "Edges": [
+        {
+          "SourceOutputPort": {
+            "NodeId": "b737f2be",
+            "PortName": "Trained Model",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "13a19d8b",
+            "PortName": "Trained Model",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "Training Data",
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "b737f2be",
+            "PortName": "Training Data",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "Clicks",
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": "13a19d8b",
+            "PortName": "Clicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "13a19d8b",
+            "PortName": "BSERP_WithClicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "BSERP_WithClicks",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "13a19d8b",
+            "PortName": "GSERP_WithClicks",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "GSERP_WithClicks",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "13a19d8b",
+            "PortName": "GSERP",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "GSERP",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        },
+        {
+          "SourceOutputPort": {
+            "NodeId": "13a19d8b",
+            "PortName": "BSERP",
+            "GraphPortName": null,
+            "IsParameter": false,
+            "WebServicePort": null
+          },
+          "DestinationInputPort": {
+            "NodeId": null,
+            "PortName": null,
+            "GraphPortName": "BSERP",
+            "IsParameter": false,
+            "WebServicePort": null
+          }
+        }
+      ],
+      "DefaultCompute": null,
+      "Id": null,
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "1970-01-01T00:00:00",
+      "LastModifiedDate": "1970-01-01T00:00:00",
+      "EntityStatus": 0
+    },
+    "Layout": {
+      "NodeLayouts": {
+        "b737f2be": {
+          "X": 19.333334,
+          "Y": 100.0,
+          "Width": 273.0,
+          "Height": 78.0
+        },
+        "13a19d8b": {
+          "X": 11.166667,
+          "Y": 231.133514,
+          "Width": 288.095337,
+          "Height": 91.3585052
+        }
+      },
+      "CommentThreads": {},
+      "Id": null,
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "1970-01-01T00:00:00",
+      "LastModifiedDate": "1970-01-01T00:00:00",
+      "EntityStatus": 0
+    },
+    "Aliases": {
+      "AliasedValues": null,
+      "NodeAliases": {},
+      "Id": null,
+      "WorkspaceId": null,
+      "Etag": null,
+      "Tags": null,
+      "CreatedDate": "2020-11-17T16:49:21.1294607+08:00",
+      "LastModifiedDate": "2020-11-17T16:49:21.1294607+08:00",
+      "EntityStatus": 0
+    }
+  },
+  "Interface": {
+    "Parameters": [
+      {
+        "Name": "Metrics_V2RepoVersion",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_V2Repo_LastSensorDateStr",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_SiteInsighVersion",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_RankfileVersion",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Metrics_xSLAPI_xCUV_Version",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Predictor",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Loader",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Top100M_xSLAPI_Start",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      },
+      {
+        "Name": "Top100M_xSLAPI_End",
+        "Documentation": null,
+        "DefaultValue": null,
+        "IsOptional": true,
+        "MinMaxRules": [],
+        "EnumRules": [],
+        "Type": 4
+      }
+    ],
+    "Ports": {
+      "Inputs": [
+        {
+          "Name": "Training Data",
+          "Documentation": null,
+          "DataTypesIds": [
+            "ExtractionTSV",
+            "GenericTSV",
+            "GenericText"
+          ],
+          "IsOptional": false,
+          "ParameterName": null,
+          "IsStrictOptional": false
+        },
+        {
+          "Name": "Clicks",
+          "Documentation": null,
+          "DataTypesIds": [
+            "CosmosPath"
+          ],
+          "IsOptional": false,
+          "ParameterName": null,
+          "IsStrictOptional": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "BSERP_WithClicks",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        },
+        {
+          "Name": "GSERP_WithClicks",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        },
+        {
+          "Name": "GSERP",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        },
+        {
+          "Name": "BSERP",
+          "Documentation": null,
+          "DataTypeId": "CosmosPath",
+          "PassThroughInputName": null
+        }
+      ]
+    },
+    "ParameterNamesByGroups": [],
+    "MetadataParameters": null,
+    "DataPathParameters": null,
+    "DataPathParameterList": null
+  }
+}
